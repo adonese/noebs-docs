@@ -12,9 +12,6 @@
     <link href="/css/font-awesome-4.0.3.css" rel="stylesheet">
     <link href="/css/base.css" rel="stylesheet">
     <link href="/img/favicon.ico" rel="shortcut icon">
-
-
-
 </head>
 
 <body data-spy="scroll" data-target="#sidebar-nav" data-offset="50">
@@ -82,8 +79,12 @@
                         <li><a href="#misc-ChangePINAPI">Change PIN API</a></li>
 
                         <li><a href="#misc-IsAliveAPI">Is Alive API</a></li>
+                        
 
-
+                    </ul>
+                    <a>HOW TOS</a><span class="arrow"></span></a>
+                    <ul id="misc-dropdown">
+                    <li><a href="#misc-encryption">PIN Encryption</a></li>
                     </ul>
                 </li>
 
@@ -140,6 +141,9 @@
 
                         </ul>
                     </div>
+
+
+
                 </div>
 
 
@@ -1021,9 +1025,37 @@ print(response.json())
                     </div>
                 </div>
 
+                <br><br>
 
+                <!--PIN encryption doc-->
+                <div class="row coredocs-section-link">
 
-
+                        <div class="col-md-6 docs-content">
+                                <h3 id="misc-encryption" class="coredocs-link-title">How to Encrypt your data<a href="#misc-encryption"><i
+                                            class="fa fa-link" aria-hidden="true"></i>
+                                    </a></h3>
+                                                <p>NOTE</p>
+                                                Please restrain from using the old EBS encryption method. It was insecure and it exposes the plain PIN. (Pre MCS WebService Description 2.8.1)
+                        
+                                                <h4>About the encryption</h4>
+                                                <ul>
+                                                    <li>Each client have a unique TMS (Terminal Master Key)</li>
+                                                    <li>/workingKey returns an encrypted key</li>
+                                                    <li>Client use their TMS to decrypt the working key</li>
+                                                    <li>Compute the clear PIN Block as following:
+                                                        <code>
+                                                        p1 = [0] + [pin_length] + [pin] + [10*f]
+                                                        p2 = [0000] + last_12_digits_of_pan_length-1
+                                                        clear PIN Block = p1 XOR p2
+                                                        </code>
+                                                    </li>
+                                                    <li>Use the decrypted working key as the key for DES</li>
+                                                    <li>Use DES to encrypt the clear PIN Block</li>
+                        
+                                                </ul>
+                        
+                                            </div>
+                </div>
             </div>
         </div>
     </div>

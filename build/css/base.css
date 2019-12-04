@@ -6,6 +6,10 @@ h1 {
     margin-top: 20px;
 }
 
+code {
+  white-space: pre-line;
+}
+
 pre.highlight code * {
   white-space: nowrap;    // this sets all children inside to nowrap
 }
