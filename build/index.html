@@ -155,7 +155,7 @@ We use different kind of error codes:
 
         <div class="meta">
             <span class="label label-primary">POST</span>
-            <code>https://beta.soluspay.net/workingKey</code>
+            <code>https://beta.soluspay.net/api/workingKey</code>
         </div>
 
         <p class="description">Working key is the key used by EBS for card holder&#39;s info encryption</p>
@@ -193,7 +193,7 @@ We use different kind of error codes:
         
             
             
-            <pre class="highlight javascript " data-language="javascript"><code>var url = new URL("https://beta.soluspay.net/workingKey");
+            <pre class="highlight javascript " data-language="javascript"><code>var url = new URL("https://beta.soluspay.net/api/workingKey");
 var data = {
     clientId: ...,
     systemTraceAuditNumber: ...,
@@ -220,7 +220,7 @@ fetch(url, options).then(function(response) {
             
             <pre class="highlight python d-none" data-language="python"><code>import requests
 
-url = "https://beta.soluspay.net/workingKey"
+url = "https://beta.soluspay.net/api/workingKey"
 data = {
     "clientId": ...,
     "systemTraceAuditNumber": ...,
@@ -243,7 +243,7 @@ print(response.json())
 
         <div class="meta">
             <span class="label label-primary">POST</span>
-            <code>https://beta.soluspay.net/purchase</code>
+            <code>https://beta.soluspay.net/api/purchase</code>
         </div>
 
         <p class="description">Purchase API for merchants purchases</p>
@@ -291,7 +291,7 @@ print(response.json())
         
             
             
-            <pre class="highlight javascript " data-language="javascript"><code>var url = new URL("https://beta.soluspay.net/purchase");
+            <pre class="highlight javascript " data-language="javascript"><code>var url = new URL("https://beta.soluspay.net/api/purchase");
 var data = {
     clientId: ...,
     systemTraceAuditNumber: ...,
@@ -323,7 +323,7 @@ fetch(url, options).then(function(response) {
             
             <pre class="highlight python d-none" data-language="python"><code>import requests
 
-url = "https://beta.soluspay.net/purchase"
+url = "https://beta.soluspay.net/api/purchase"
 data = {
     "clientId": ...,
     "systemTraceAuditNumber": ...,
@@ -351,7 +351,7 @@ print(response.json())
 
         <div class="meta">
             <span class="label label-primary">POST</span>
-            <code>https://beta.soluspay.net/cardTransfer</code>
+            <code>https://beta.soluspay.net/api/cardTransfer</code>
         </div>
 
         <p class="description">Funds transfer API</p>
@@ -401,7 +401,7 @@ print(response.json())
         
             
             
-            <pre class="highlight javascript " data-language="javascript"><code>var url = new URL("https://beta.soluspay.net/cardTransfer");
+            <pre class="highlight javascript " data-language="javascript"><code>var url = new URL("https://beta.soluspay.net/api/cardTransfer");
 var data = {
     clientId: ...,
     systemTraceAuditNumber: ...,
@@ -434,7 +434,7 @@ fetch(url, options).then(function(response) {
             
             <pre class="highlight python d-none" data-language="python"><code>import requests
 
-url = "https://beta.soluspay.net/cardTransfer"
+url = "https://beta.soluspay.net/api/cardTransfer"
 data = {
     "clientId": ...,
     "systemTraceAuditNumber": ...,
@@ -463,7 +463,7 @@ print(response.json())
 
         <div class="meta">
             <span class="label label-primary">POST</span>
-            <code>https://beta.soluspay.net/balance</code>
+            <code>https://beta.soluspay.net/api/balance</code>
         </div>
 
         <p class="description">Get balance of the user&#39;s card API</p>
@@ -513,7 +513,7 @@ print(response.json())
         
             
             
-            <pre class="highlight javascript " data-language="javascript"><code>var url = new URL("https://beta.soluspay.net/balance");
+            <pre class="highlight javascript " data-language="javascript"><code>var url = new URL("https://beta.soluspay.net/api/balance");
 var data = {
     clientId: ...,
     systemTraceAuditNumber: ...,
@@ -546,7 +546,7 @@ fetch(url, options).then(function(response) {
             
             <pre class="highlight python d-none" data-language="python"><code>import requests
 
-url = "https://beta.soluspay.net/balance"
+url = "https://beta.soluspay.net/api/balance"
 data = {
     "clientId": ...,
     "systemTraceAuditNumber": ...,
@@ -575,7 +575,7 @@ print(response.json())
 
         <div class="meta">
             <span class="label label-primary">POST</span>
-            <code>https://beta.soluspay.net/changePin</code>
+            <code>https://beta.soluspay.net/api/changePin</code>
         </div>
 
         <p class="description">Change a user&#39;s PIN</p>
@@ -621,7 +621,7 @@ print(response.json())
         
             
             
-            <pre class="highlight javascript " data-language="javascript"><code>var url = new URL("https://beta.soluspay.net/changePin");
+            <pre class="highlight javascript " data-language="javascript"><code>var url = new URL("https://beta.soluspay.net/api/changePin");
 var data = {
     clientId: ...,
     systemTraceAuditNumber: ...,
@@ -652,7 +652,7 @@ fetch(url, options).then(function(response) {
             
             <pre class="highlight python d-none" data-language="python"><code>import requests
 
-url = "https://beta.soluspay.net/changePin"
+url = "https://beta.soluspay.net/api/changePin"
 data = {
     "clientId": ...,
     "systemTraceAuditNumber": ...,
@@ -679,7 +679,7 @@ print(response.json())
 
         <div class="meta">
             <span class="label label-primary">POST</span>
-            <code>https://beta.soluspay.net/isAlive</code>
+            <code>https://beta.soluspay.net/api/isAlive</code>
         </div>
 
         <p class="description">Returns the stats of EBS payment gateway</p>
@@ -729,7 +729,7 @@ print(response.json())
         
             
             
-            <pre class="highlight javascript " data-language="javascript"><code>var url = new URL("https://beta.soluspay.net/isAlive");
+            <pre class="highlight javascript " data-language="javascript"><code>var url = new URL("https://beta.soluspay.net/api/isAlive");
 var data = {
     clientId: ...,
     systemTraceAuditNumber: ...,
@@ -762,7 +762,7 @@ fetch(url, options).then(function(response) {
             
             <pre class="highlight python d-none" data-language="python"><code>import requests
 
-url = "https://beta.soluspay.net/isAlive"
+url = "https://beta.soluspay.net/api/isAlive"
 data = {
     "clientId": ...,
     "systemTraceAuditNumber": ...,
