@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Noebs -- Merchant APIs</title>
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/font-awesome-4.0.3.css" rel="stylesheet">
+    <link href="/css/base.css" rel="stylesheet">
+    <link href="/img/favicon.ico" rel="shortcut icon">
+</head>
+
+<body data-spy="scroll" data-target="#sidebar-nav" data-offset="50">
+
+  <!--Navbar-->
+  <!-- Just an image -->
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="/">
+      <img src="/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="API Docs">
+    </a>
+    
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="https://soluspay.net">Solus</a>
+        </li>
+        <li>
+          <a href="/errors">Errors</a>
+        </li>
+      </ul>
+  
+  </nav>
+
+
+
+<div class="container" id="main">
+  <div class="row">
+      <div class="col-md-12 main-container">
+        <table>
+          <thead>
+          <tr>
+          <th>Code</th>
+          <th>Description</th>
+          <th>Comments</th>
+          </tr>
+          </thead>
+          
+          <tbody>
+          <tr>
+          <td>000</td>
+          <td>Approval</td>
+          <td></td>
+          </tr>
+          
+          <tr>
+          <td>103</td>
+          <td>Format Error</td>
+          <td>Invalid merchant or service provider</td>
+          </tr>
+          
+          <tr>
+          <td>111</td>
+          <td>First possible transaction allowed by card must be PIN Change The card was used in a transaction, by its default PIN, While Change PIN should be done first.</td>
+          <td></td>
+          </tr>
+          
+          <tr>
+          <td>130</td>
+          <td>Invalid format</td>
+          <td>The transaction has invalid message format. After the transaction authorization, the terminal or external host will declined the response</td>
+          </tr>
+          
+          <tr>
+          <td>178</td>
+          <td>Original request not found</td>
+          <td>Returned if the voucher is not found for the particular phone number sent on the request of cash out voucher, the phone number entered isn’t the same as the one used to generate the voucher.</td>
+          </tr>
+          
+          <tr>
+          <td>158</td>
+          <td>Invalid processing code</td>
+          <td>1. The statement account has no information 2. The statement transaction request is disabled.</td>
+          </tr>
+          
+          <tr>
+          <td>161</td>
+          <td>Withdrawal limit exceeded</td>
+          <td>The transaction authorizer withdrawal limit is exceeded.</td>
+          </tr>
+          
+          <tr>
+          <td>191</td>
+          <td>Destination not available</td>
+          <td>The transaction destination (e.g. bank or biller) is unreachable, or didn&rsquo;t respond during timeout period. In case of timeout with a biller, there is a chance that biller provided actual service to customer, so debited amount won’t be reversed.</td>
+          </tr>
+          
+          <tr>
+          <td>194</td>
+          <td>Duplicate transaction</td>
+          <td></td>
+          </tr>
+          
+          <tr>
+          <td>196</td>
+          <td>System error</td>
+          <td>1. Unexpected error occurred in the system 2. Bad PIN block format</td>
+          </tr>
+          
+          <tr>
+          <td>201</td>
+          <td>Contact Card Issuer</td>
+          <td>Contact your card issuer (Bank).</td>
+          </tr>
+          
+          <tr>
+          <td>205</td>
+          <td>External decline</td>
+          <td>The external system, e.g. biller, has declined the transaction, usually because provided customer data are not accepted. E.g. wrong phone number for top-up transactions. Or e.g. Bank has declined the transaction, for: -Routing error -Ineligible account</td>
+          </tr>
+          
+          <tr>
+          <td>251</td>
+          <td>Insufficient fund</td>
+          <td>Customer doesn&rsquo;t have enough balance</td>
+          </tr>
+          
+          <tr>
+          <td>281</td>
+          <td>Wrong customer information</td>
+          <td>Mostly used to indicate wrong customer payment info that is not accepted by the biller, or a missing parameter of the “PersonalPaymentInfo” field.</td>
+          </tr>
+          
+          <tr>
+          <td>338</td>
+          <td>PIN tries limit exceeded</td>
+          <td>Tries to enter PIN has been exceeded. Number of trials is bigger than the limit defined</td>
+          </tr>
+          
+          <tr>
+          <td>355</td>
+          <td>Invalid PIN</td>
+          <td>1. PIN entered was wrong 2. Bad CVV</td>
+          </tr>
+          
+          <tr>
+          <td>375</td>
+          <td>PIN Tries Limit Reached</td>
+          <td>Customer reached the max allowed number of wrong PIN entries</td>
+          </tr>
+          
+          <tr>
+          <td>362</td>
+          <td>Encryption error</td>
+          <td>For future use, but its returned in case of invalid MAC (Message authentication code)</td>
+          </tr>
+          
+          <tr>
+          <td>389</td>
+          <td>Invalid terminal ID</td>
+          <td>the terminal id is successfully configured in TWO but not in Merchant DB .or the protocol version in TWO is not the one used in POSs(currently used version is 0)</td>
+          </tr>
+          
+          <tr>
+          <td>412</td>
+          <td>Invalid transaction</td>
+          <td>The transaction is not allowed for the profile of this customer</td>
+          </tr>
+          
+          <tr>
+          <td>413</td>
+          <td>Merchant limit exceeded</td>
+          <td>Acquirer Limit is Exceeded</td>
+          </tr>
+          
+          <tr>
+          <td>467</td>
+          <td>Invalid amount</td>
+          <td></td>
+          </tr>
+          
+          <tr>
+          <td>514</td>
+          <td>Invalid track 2</td>
+          <td>Invalid card due to invalid track2</td>
+          </tr>
+          
+          <tr>
+          <td>536</td>
+          <td>Restricted card</td>
+          <td>Card status is &ldquo;Restricted&rdquo;</td>
+          </tr>
+          
+          <tr>
+          <td>540</td>
+          <td>Transaction not supported</td>
+          <td>Transaction not supported by bank</td>
+          </tr>
+          
+          <tr>
+          <td>541</td>
+          <td>Lost card</td>
+          <td></td>
+          </tr>
+          
+          <tr>
+          <td>543</td>
+          <td>Stolen card</td>
+          <td></td>
+          </tr>
+          
+          <tr>
+          <td>550</td>
+          <td>Closed card</td>
+          <td></td>
+          </tr>
+          
+          <tr>
+          <td>552</td>
+          <td>Declared card</td>
+          <td></td>
+          </tr>
+          
+          <tr>
+          <td>554</td>
+          <td>Expired card</td>
+          <td></td>
+          </tr>
+          
+          <tr>
+          <td>465</td>
+          <td>Uses Limit Exceeded</td>
+          <td></td>
+          </tr>
+          
+          <tr>
+          <td>600</td>
+          <td>Invalid client Id client Id field format was violated</td>
+          <td></td>
+          </tr>
+          
+          <tr>
+          <td>601</td>
+          <td>Invalid Card Number Format</td>
+          <td>Card Number field format was violated</td>
+          </tr>
+          
+          <tr>
+          <td>602</td>
+          <td>Invalid Expiry Date Format</td>
+          <td>Expiry Date field format was violated</td>
+          </tr>
+          
+          <tr>
+          <td>603</td>
+          <td>Format Error</td>
+          <td>There is a missing parameter of the transaction request, or invalid request in general.</td>
+          </tr>
+          
+          <tr>
+          <td>604</td>
+          <td>Invalid Currency Code</td>
+          <td>Currency Code field format was violated</td>
+          </tr>
+          
+          <tr>
+          <td>605</td>
+          <td>Invalid Account Format</td>
+          <td>Account field format was violated</td>
+          </tr>
+          
+          <tr>
+          <td>606</td>
+          <td>Invalid System Trace Audit Number Format</td>
+          <td>System Trace Audit Number field format was violated</td>
+          </tr>
+          
+          <tr>
+          <td>607</td>
+          <td>Invalid Personal Payment Information Format</td>
+          <td>Personal Payment Information field format was violated</td>
+          </tr>
+          
+          <tr>
+          <td>608</td>
+          <td>Invalid Payee Identification</td>
+          <td></td>
+          </tr>
+          
+          <tr>
+          <td>609</td>
+          <td>Invalid Phone Number Format</td>
+          <td>Phone Number field format was violated</td>
+          </tr>
+          
+          <tr>
+          <td>610</td>
+          <td>Invalid voucher number Format</td>
+          <td>voucher number field format was violated</td>
+          </tr>
+          
+          <tr>
+          <td>611</td>
+          <td>Invalid Transaction Date Format</td>
+          <td>Transaction Date field format was violated</td>
+          </tr>
+          
+          <tr>
+          <td>615</td>
+          <td>Invalid Service Id</td>
+          <td></td>
+          </tr>
+          
+          <tr>
+          <td>616</td>
+          <td>Invalid original transaction system trace audit number Format</td>
+          <td>original transaction system trace audit number field format was violated</td>
+          </tr>
+          
+          <tr>
+          <td>617</td>
+          <td>MCS Time out</td>
+          <td></td>
+          </tr>
+          
+          <tr>
+          <td>618</td>
+          <td>This service cannot be reversed</td>
+          <td>Service id cannot be reversed</td>
+          </tr>
+          
+          <tr>
+          <td>619</td>
+          <td>Invalid Terminal Id Format</td>
+          <td>Terminal Id field format was violated</td>
+          </tr>
+          
+          <tr>
+          <td>620</td>
+          <td>Invalid PIN Format</td>
+          <td>PIN field format was violated</td>
+          </tr>
+          
+          <tr>
+          <td>621</td>
+          <td>Invalid Amount Format</td>
+          <td>Amount field format was violated</td>
+          </tr>
+          
+          <tr>
+          <td>622</td>
+          <td>Invalid Cash Back</td>
+          <td>Amount Format  Cash Back Amount field format was violated</td>
+          </tr>
+          
+          <tr>
+          <td>632</td>
+          <td>MCS Invalid Cash out Transaction due to Invalid voucher length</td>
+          <td></td>
+          </tr>
+          
+          <tr>
+          <td>633</td>
+          <td>MCS invalid track2</td>
+          <td>track2 field format was violated</td>
+          </tr>
+          
+          <tr>
+          <td>636</td>
+          <td>Invalid entityId</td>
+          <td>entityId  field format was violated</td>
+          </tr>
+          
+          <tr>
+          <td>637</td>
+          <td>Invalid entityType</td>
+          <td>entityType  field format was violated</td>
+          </tr>
+          
+          <tr>
+          <td>638</td>
+          <td>Invalid channelType</td>
+          <td>channelType  field format was violated</td>
+          </tr>
+          
+          <tr>
+          <td>696</td>
+          <td>MCS System Error</td>
+          <td>Unexpected error in MCS -Merchant</td>
+          </tr>
+          
+          <tr>
+          <td>300</td>
+          <td>Biller Declined Transaction</td>
+          <td>Biller Rejected Transaction – Check billerResponseCode for more clarification</td>
+          </tr>
+          
+          <tr>
+          <td>301</td>
+          <td>Unresolved Transaction Due to Biller TimeOut</td>
+          <td>Transaction is under processing in biller side and timeout occurred between payment gateway and biller</td>
+          </tr>
+          
+          <tr>
+          <td>302</td>
+          <td>Biller Destination is Unavailable or Unreachable</td>
+          <td>Biller is down or unreachable at the moment.</td>
+          </tr>
+          
+          <tr>
+          <td>303</td>
+          <td>Payment Declined Invalid Invoice</td>
+          <td>Invoice Number is Invalid</td>
+          </tr>
+          
+          <tr>
+          <td>304</td>
+          <td>Payment Declined Wrong Add Data</td>
+          <td>Additional Data Submitted with Invoice are Invalid</td>
+          </tr>
+          
+          <tr>
+          <td>305</td>
+          <td>Payment Declined Already Paid</td>
+          <td>Invoice is already paid</td>
+          </tr>
+          
+          <tr>
+          <td>306</td>
+          <td>Payment Declined Wrong Amount</td>
+          <td>Invoice is declined due to wrong amount</td>
+          </tr>
+          
+          <tr>
+          <td>641</td>
+          <td>Invalid Original STAN Format</td>
+          <td>Original STAN is in invalid format</td>
+          </tr>
+          
+          <tr>
+          <td>642</td>
+          <td>Transaction Not Found</td>
+          <td>Original Transaction not found</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+  </div>
+</div>
+
+<script src="/js/jquery-1.10.2.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/api.js"></script>
+</body>
+
+</html>

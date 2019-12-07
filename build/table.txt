@@ -1,0 +1,81 @@
+---
+
+---
+
+Category	Description
+1	System Error
+2	Issuer Error
+3	Authentication Error
+4	Authorization Error
+5	Card Error
+6	MCS-Merchant API Error
+
+| Code	| Description	| Comments |
+|----|------|-------|
+| 000	| Approval	| |
+| 103	| Format Error	|Invalid merchant or service provider |
+| 111	| First possible transaction allowed by card must be PIN Change	The card was used in a transaction, by its default PIN, While Change PIN should be done first. | 
+| 130 	| Invalid format	| The transaction has invalid message format. After the transaction authorization, the terminal or external host will declined the response |
+| 178	| Original request not found	| Returned if the voucher is not found for the particular phone number sent on the request of cash out voucher, the phone number entered isn’t the same as the one used to generate the voucher. |
+
+| 158	| Invalid processing code | 1. The statement account has no information 2. The statement transaction request is disabled. |
+| 161	| Withdrawal limit exceeded	|The transaction authorizer withdrawal limit is exceeded. |
+| 191 	| Destination not available	|The transaction destination (e.g. bank or biller) is unreachable, or didn't respond during timeout period. In case of timeout with a biller, there is a chance that biller provided actual service to customer, so debited amount won’t be reversed. |
+| 194	| Duplicate transaction	| |
+| 196	| System error	| 1. Unexpected error occurred in the system 2. Bad PIN block format |
+| 201	| Contact Card Issuer	| Contact your card issuer (Bank). |
+| 205	| External decline | The external system, e.g. biller, has declined the transaction, usually because provided customer data are not accepted. E.g. wrong phone number for top-up transactions. Or e.g. Bank has declined the transaction, for: -Routing error -Ineligible account |
+| 251	| Insufficient fund	| Customer doesn't have enough balance |
+| 281	| Wrong customer information | Mostly used to indicate wrong customer payment info that is not accepted by the biller, or a missing parameter of the “PersonalPaymentInfo” field. |
+| 338	| PIN tries limit exceeded | Tries to enter PIN has been exceeded. Number of trials is bigger than the limit defined |
+| 355	| Invalid PIN	| 1. PIN entered was wrong 2. Bad CVV |
+|375	|PIN Tries Limit Reached | Customer reached the max allowed number of wrong PIN entries |
+|362	|Encryption error | For future use, but its returned in case of invalid MAC (Message authentication code) | 
+|389	|Invalid terminal ID | the terminal id is successfully configured in TWO but not in Merchant DB .or the protocol version in TWO is not the one used in POSs(currently used version is 0) |
+|412	|Invalid transaction | The transaction is not allowed for the profile of this customer |
+|413	|Merchant limit exceeded | Acquirer Limit is Exceeded | 
+|467	|Invalid amount	|   |
+|514	| Invalid track 2 | Invalid card due to invalid track2 |
+|536	| Restricted card | Card status is "Restricted" |
+|540	| Transaction not supported	| Transaction not supported by bank |
+|541	| Lost card	|  |
+|543	| Stolen card |  |
+|550	| Closed card	| |
+|552	| Declared card	 |  |
+|554	| Expired card	|  |
+| 465	| Uses Limit Exceeded  |  |	
+| 600	| Invalid client Id	client Id field format was violated |  |
+| 601	| Invalid Card Number Format | Card Number field format was violated |
+| 602	| Invalid Expiry Date Format | Expiry Date field format was violated |
+| 603	| Format Error | There is a missing parameter of the transaction request, or invalid request in general. |
+| 604	| Invalid Currency Code	| Currency Code field format was violated |
+| 605	| Invalid Account Format | Account field format was violated |
+| 606	| Invalid System Trace Audit Number Format | System Trace Audit Number field format was violated |
+| 607	| Invalid Personal Payment Information Format | Personal Payment Information field format was violated |
+| 608	| Invalid Payee Identification | |
+| 609	| Invalid Phone Number Format | Phone Number field format was violated |
+| 610	| Invalid voucher number Format	| voucher number field format was violated |
+| 611	| Invalid Transaction Date Format | Transaction Date field format was violated | 
+| 615	| Invalid Service Id | |
+| 616	| Invalid original transaction system trace audit number Format	| original transaction system trace audit number field format was violated |
+|617	| MCS Time out | |
+|618	| This service cannot be reversed |	Service id cannot be reversed |
+|619	| Invalid Terminal Id Format | Terminal Id field format was violated |
+|620	| Invalid PIN Format | PIN field format was violated |
+|621	| Invalid Amount Format	| Amount field format was violated |
+|622	| Invalid Cash Back |Amount Format	Cash Back Amount field format was violated |
+|632	| MCS Invalid Cash out Transaction due to Invalid voucher length |	
+|633	| MCS invalid track2 | track2 field format was violated |
+|636	| Invalid entityId | entityId  field format was violated |
+|637	| Invalid entityType | entityType  field format was violated |
+|638	| Invalid channelType | channelType  field format was violated |
+|696	| MCS System Error | Unexpected error in MCS -Merchant | 
+|300	| Biller Declined Transaction | Biller Rejected Transaction – Check billerResponseCode for more clarification |
+|301	| Unresolved Transaction Due to Biller TimeOut | Transaction is under processing in biller side and timeout occurred between payment gateway and biller |
+|302	| Biller Destination is Unavailable or Unreachable | Biller is down or unreachable at the moment. |
+|303	| Payment Declined Invalid Invoice | Invoice Number is Invalid |
+|304	| Payment Declined Wrong Add Data | Additional Data Submitted with Invoice are Invalid |
+|305	| Payment Declined Already Paid	| Invoice is already paid |
+|306	| Payment Declined Wrong Amount	| Invoice is declined due to wrong amount |
+|641	| Invalid Original STAN Format	| Original STAN is in invalid format |
+|642	| Transaction Not Found	| Original Transaction not found |
