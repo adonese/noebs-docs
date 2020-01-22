@@ -1,0 +1,17 @@
+openapi: 3.0.0
+info:
+  title: Widget API
+  version: '1.0'
+  description: An example API for widgets
+servers:
+  - url: https://www.example.org/
+paths:
+  /widgets:
+    post:
+      summary: List all the widgets.
+      operationId: listWidgets
+      requestBody:
+        name: search
+        description: Filter widgets by this search term.
+        schema:
+          type: string

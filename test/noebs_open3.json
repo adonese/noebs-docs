@@ -2,57 +2,29 @@
   "openapi": "3.0.0",
   "info": {
     "title": "Noebs -- Merchant APIs",
-    "description": "# Introduction\n\nNoebs is a middleware that consumes EBS services. It was built to be simple, developer friendly and customizable enough to be used\nin different scenarios and adapt to variety of different logics.\n\n# Overview\nWe make great use of http status codes; it is one of our design decisions. We believe that they make client codes more easy and it helps us too to make a robust API.\nYou only get 200 on successful transactions.\nYou get 400 in case of missing a field, or using wron types\nYou get 502 in EBS payment gateway errors (e.g., insufficient fund)\n\n# Authentication\nWhat is the preferred way of using the API?\n\n# Error Codes\nWe use different kind of error codes:\n- 400 for validations errors (e.g., missing a required field)\n- 502 for EBS (payment gateway) errors (e.g., when you have an insufficient balance)\n- 504 for EBS (payment gateway) timeouts. E.g., EBS server is unreachable\n\n",
+    "description": "# Introduction\nNoebs is a middleware that consumes EBS services. It was built to be simple, developer friendly and customizable enough to be used\nin different scenarios and adapt to variety of different logics.\n\n# Overview\nWe make great use of http status codes; it is one of our design decisions. We believe that they make client codes more easy and it helps us too to make a robust API.\nYou only get 200 on successful transactions.\nYou get 400 in case of missing a field, or using wron types\nYou get 502 in EBS payment gateway errors (e.g., insufficient fund)\n\n# Authentication\nWhat is the preferred way of using the API?\n\n# Error Codes\nWe use different kind of error codes:\n- 400 for validations errors (e.g., missing a required field)\n- 502 for EBS (payment gateway) errors (e.g., when you have an insufficient balance)\n- 504 for EBS (payment gateway) timeouts. E.g., EBS server is unreachable\n\n",
     "contact": {},
     "version": "1.0"
   },
   "servers": [
     {
-      "url": "https://beta.soluspay.net",
-      "variables": {},
-      "description": "Live noebs payment server"
+      "url": "https://beta.soluspay.net/api",
+      "variables": {}
     }
   ],
   "paths": {
-    "/workingKey": {
+    "/api/workingKey": {
       "post": {
-        "tags": ["EBS Fields"],
-        "summary": "working Key request fields",
+        "summary": "Working Key API",
         "description": "Working key is the key used by EBS for card holder's info encryption",
         "operationId": "WorkingKeyAPI",
+        "parameters": [],
         "requestBody": {
-          "description": "Working key is the key used by EBS for card holder's info encryption",
+          "description": "",
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "required": [
-                  "clientId",
-                  "systemTraceAuditNumber",
-                  "tranDateTime",
-                  "terminalId"
-                ],
-                "properties": {
-                  "clientId": {
-                    "type": "string",
-                    "format": "string",
-                    "description": "fuck me i hate this"
-                  },
-                  "systemTraceAuditNumber": {
-                    "type": "integer",
-                    "format": "int32",
-                    "description": "auto increment integer value for each transaction"
-                  },
-                  "tranDateTime": {
-                    "type": "string",
-                    "format": "string",
-                    "description": "transaction date time in YYMMddhhmmss format"
-                  },
-                  "terminalId": {
-                    "type": "string",
-                    "format": "string"
-                  }
-                }
+                "$ref": "#/components/schemas/WorkingKeyAPIRequest"
               },
               "example": {
                 "clientId": "ACTS",
@@ -66,16 +38,18 @@
         },
         "responses": {
           "200": {
-            "description": "Successful Response (only successful responses result in status code of 200",
-            "headers": { "content-type": "application/json" }
+            "description": "",
+            "headers": {}
           }
         },
         "deprecated": false
       }
     },
-    "/purchase": {
+    "/apipurchase": {
       "post": {
-        "tags": ["EBS Fields"],
+        "tags": [
+          "Misc"
+        ],
         "summary": "Purchase API",
         "description": "Purchase API for merchants purchases",
         "operationId": "PurchaseAPI",
@@ -104,28 +78,8 @@
         },
         "responses": {
           "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/https%3A~1~1beta.soluspay.net~1api~1balance"
-                },
-                "example": {
-                  "ebs_response": {
-                    "terminalId": "18000377",
-                    "systemTraceAuditNumber": 54,
-                    "clientId": "ACTS",
-                    "PAN": "4665",
-                    "responseMessage": "Approval",
-                    "responseStatus": "Successful",
-                    "responseCode": 0,
-                    "tranDateTime": "200419085611",
-                    "tranFee": 0,
-                    "additionalAmount": -1
-                  }
-                }
-              }
-            }
+            "description": "",
+            "headers": {}
           },
           "502": {
             "description": "Bad Gateway",
@@ -158,9 +112,11 @@
         "deprecated": false
       }
     },
-    "/cardTransfer": {
+    "/api/cardTransfer": {
       "post": {
-        "tags": ["EBS Fields"],
+        "tags": [
+          "Misc"
+        ],
         "summary": "Card Transfer API",
         "description": "Funds transfer API",
         "operationId": "CardTransferAPI",
@@ -224,9 +180,11 @@
         "deprecated": false
       }
     },
-    "/balance": {
+    "/api/balance": {
       "post": {
-        "tags": ["EBS Fields"],
+        "tags": [
+          "Misc"
+        ],
         "summary": "Balance API",
         "description": "Get balance of the user's card API",
         "operationId": "BalanceAPI",
@@ -290,9 +248,11 @@
         "deprecated": false
       }
     },
-    "/changePin": {
+    "/api/changePin": {
       "post": {
-        "tags": ["EBS Fields"],
+        "tags": [
+          "Misc"
+        ],
         "summary": "Change PIN API",
         "description": "Change a user's PIN",
         "operationId": "ChangePINAPI",
@@ -353,14 +313,17 @@
         "deprecated": false
       }
     },
-    "/isAlive": {
+    "/api/isAlive": {
       "post": {
-        "tags": ["EBS Fields"],
+        "tags": [
+          "Misc"
+        ],
         "summary": "Is Alive API",
         "description": "Returns the stats of EBS payment gateway",
         "operationId": "IsAliveAPI",
+        "parameters": [],
         "requestBody": {
-          "description": "Request parameters for is alive",
+          "description": "",
           "content": {
             "application/json": {
               "schema": {
@@ -384,24 +347,18 @@
         },
         "responses": {
           "200": {
-            "description": "Request parameters for is alive",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/IsAliveAPIRequest"
-                }
-              }
-            },
-            "deprecated": false
+            "description": "All successful responses have this form",
+            "headers": {}
           }
-        }
+        },
+        "deprecated": false
       }
     }
   },
   "components": {
     "schemas": {
-      "workingKey": {
-        "title": "Working Key Request Fields",
+      "WorkingKeyAPIRequest": {
+        "title": "WorkingKeyAPIRequest",
         "required": [
           "clientId",
           "systemTraceAuditNumber",
@@ -410,24 +367,19 @@
         ],
         "type": "object",
         "properties": {
+
           "clientId": {
-            "type": "string",
-            "format": "string",
-            "example": "ACTS"
+            "type": "string"
           },
           "systemTraceAuditNumber": {
             "type": "integer",
-            "format": "int32",
-            "description": "auto increment integer value for each transaction"
+            "format": "int32"
           },
           "tranDateTime": {
-            "type": "string",
-            "format": "string",
-            "description": "transaction date time in YYMMddhhmmss format"
+            "type": "string"
           },
           "terminalId": {
-            "type": "string",
-            "format": "string"
+            "type": "string"
           }
         },
         "example": {
@@ -492,6 +444,112 @@
           "PIN": "221eb901ed3b40b1",
           "tranAmount": 950,
           "tranCurrencyCode": "SDG"
+        }
+      },
+      "https://beta.soluspay.net/api/balance": {
+        "title": "https://beta.soluspay.net/api/balance",
+        "required": [
+          "message",
+          "code",
+          "status",
+          "details"
+        ],
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "status": {
+            "type": "string"
+          },
+          "details": {
+            "$ref": "#/components/schemas/Details"
+          }
+        },
+        "example": {
+          "message": "EBSError",
+          "code": 194,
+          "status": "EBSError",
+          "details": {
+            "terminalId": "18000377",
+            "systemTraceAuditNumber": 54,
+            "clientId": "ACTS",
+            "PAN": "4665",
+            "responseMessage": "Duplicate transaction",
+            "responseStatus": "Failed",
+            "responseCode": 194,
+            "tranDateTime": "200419085611",
+            "tranFee": 0,
+            "additionalAmount": -1
+          }
+        }
+      },
+      "Details": {
+        "title": "Details",
+        "required": [
+          "terminalId",
+          "systemTraceAuditNumber",
+          "clientId",
+          "PAN",
+          "responseMessage",
+          "responseStatus",
+          "responseCode",
+          "tranDateTime",
+          "tranFee",
+          "additionalAmount"
+        ],
+        "type": "object",
+        "properties": {
+          "terminalId": {
+            "type": "string"
+          },
+          "systemTraceAuditNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "clientId": {
+            "type": "string"
+          },
+          "PAN": {
+            "type": "string"
+          },
+          "responseMessage": {
+            "type": "string"
+          },
+          "responseStatus": {
+            "type": "string"
+          },
+          "responseCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tranDateTime": {
+            "type": "string"
+          },
+          "tranFee": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "additionalAmount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "terminalId": "18000377",
+          "systemTraceAuditNumber": 54,
+          "clientId": "ACTS",
+          "PAN": "4665",
+          "responseMessage": "Duplicate transaction",
+          "responseStatus": "Failed",
+          "responseCode": 194,
+          "tranDateTime": "200419085611",
+          "tranFee": 0,
+          "additionalAmount": -1
         }
       },
       "CardTransferAPIRequest": {
@@ -669,6 +727,105 @@
           "newPIN": "3233222222222222"
         }
       },
+      "https://beta.soluspay.net/api/cardTransfer": {
+        "title": "https://beta.soluspay.net/api/cardTransfer",
+        "required": [
+          "message",
+          "code",
+          "status",
+          "details"
+        ],
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "status": {
+            "type": "string"
+          },
+          "details": {
+            "$ref": "#/components/schemas/Details3"
+          }
+        },
+        "example": {
+          "message": "EBSError",
+          "code": 194,
+          "status": "EBSError",
+          "details": {
+            "terminalId": "18000377",
+            "systemTraceAuditNumber": 54,
+            "clientId": "ACTS",
+            "PAN": "4665",
+            "responseMessage": "Duplicate transaction",
+            "responseStatus": "Failed",
+            "responseCode": 194,
+            "tranDateTime": "200419085611",
+            "tranFee": 0
+          }
+        }
+      },
+      "Details3": {
+        "title": "Details3",
+        "required": [
+          "terminalId",
+          "systemTraceAuditNumber",
+          "clientId",
+          "PAN",
+          "responseMessage",
+          "responseStatus",
+          "responseCode",
+          "tranDateTime",
+          "tranFee"
+        ],
+        "type": "object",
+        "properties": {
+          "terminalId": {
+            "type": "string"
+          },
+          "systemTraceAuditNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "clientId": {
+            "type": "string"
+          },
+          "PAN": {
+            "type": "string"
+          },
+          "responseMessage": {
+            "type": "string"
+          },
+          "responseStatus": {
+            "type": "string"
+          },
+          "responseCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tranDateTime": {
+            "type": "string"
+          },
+          "tranFee": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "terminalId": "18000377",
+          "systemTraceAuditNumber": 54,
+          "clientId": "ACTS",
+          "PAN": "4665",
+          "responseMessage": "Duplicate transaction",
+          "responseStatus": "Failed",
+          "responseCode": 194,
+          "tranDateTime": "200419085611",
+          "tranFee": 0
+        }
+      },
       "IsAliveAPIRequest": {
         "title": "IsAliveAPIRequest",
         "required": [
@@ -739,10 +896,15 @@
       }
     }
   },
+  "security": [
+    {
+      "httpBasic": []
+    }
+  ],
   "tags": [
     {
-      "name": "EBS Fields",
-      "description": ""
+      "name": "Noebs APIs",
+      "description": "Noebs APIs"
     }
   ]
 }

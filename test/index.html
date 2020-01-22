@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	    <title>Noebs -- Merchant APIs</title>
+
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="/css/base.css" rel="stylesheet">
+        <link href="/img/favicon.ico" rel="shortcut icon">
+
+        
+
+    </head>
+
+    <body data-spy="scroll" data-target="#sidebar-nav" data-offset="50">
+
+        <div class="sidebar">
+    <h3 class="brand">
+        <a class="navbar-brand" href="#">API Star</a>
+        <!-- <a href="#">Noebs -- Merchant APIs</a> -->
+    </h3>
+
+    <select class="menu-context-mobile">
+        <option value="" selected="selected">Go to...</option>
+        
+            
+                <optgroup label="Temp">
+                    
+                        
+                            <option value="#temp-WorkingKeyAPI">
+                                working Key request fields
+                            </option>
+                        
+                    
+                </optgroup>
+            
+                <optgroup label="Ebs Fields">
+                    
+                        
+                            <option value="#ebs_fields-PurchaseAPI">
+                                Purchase API
+                            </option>
+                        
+                            <option value="#ebs_fields-CardTransferAPI">
+                                Card Transfer API
+                            </option>
+                        
+                            <option value="#ebs_fields-BalanceAPI">
+                                Balance API
+                            </option>
+                        
+                            <option value="#ebs_fields-ChangePINAPI">
+                                Change PIN API
+                            </option>
+                        
+                            <option value="#ebs_fields-IsAliveAPI">
+                                Is Alive API
+                            </option>
+                        
+                    
+                </optgroup>
+            
+        
+        
+    </select>
+    <div class="menu-list">
+        
+            <ul class="menu-content">
+                
+                    <li>
+                        <a> Temp <span class="arrow"></span></a>
+                        <ul id="temp-dropdown">
+                            
+                                
+                                    <li><a href="#temp-WorkingKeyAPI">working Key request fields</a></li>
+                                
+                            
+                        </ul>
+                    </li>
+                
+                    <li>
+                        <a> Ebs Fields <span class="arrow"></span></a>
+                        <ul id="ebs_fields-dropdown">
+                            
+                                
+                                    <li><a href="#ebs_fields-PurchaseAPI">Purchase API</a></li>
+                                
+                                    <li><a href="#ebs_fields-CardTransferAPI">Card Transfer API</a></li>
+                                
+                                    <li><a href="#ebs_fields-BalanceAPI">Balance API</a></li>
+                                
+                                    <li><a href="#ebs_fields-ChangePINAPI">Change PIN API</a></li>
+                                
+                                    <li><a href="#ebs_fields-IsAliveAPI">Is Alive API</a></li>
+                                
+                            
+                        </ul>
+                    </li>
+                
+            </ul>
+        
+         
+    </div>
+</div>
+
+        <div class="container" id="main">
+            <div class="row">
+                <div class="col-md-12 main-container">
+                    <div class="row">
+    <div class="col-md-6 intro-title">
+        
+            <p>Test me
+
+We really care about you and your fucking software</p>
+        
+    </div>
+    <div class="col-md-6 source-code-chooser">
+            
+                <ul class="nav nav-pills" id="language-control">
+                    
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active" data-language="javascript">javascript</a>
+                        </li>
+                    
+                        <li class="nav-item">
+                            <a href="#" class="nav-link " data-language="python">python</a>
+                        </li>
+                    
+                </ul>
+            
+        </ul>
+    </div>
+</div>
+
+
+    
+        <div class="row">
+            <div class="col-md-6">
+                <h2 id="temp" class="coredocs-section-title">
+                    temp <a href="#temp"><i class="fa fa-link" aria-hidden="true"></i></a>
+                </h2>
+            </div>
+            <div class="col-md-6 section-secondary"></div>
+        </div>
+    
+    
+        <div class="row coredocs-link">
+    <div class="col-md-6 docs-content">
+        <h3 id="temp-WorkingKeyAPI" class="coredocs-link-title">working Key request fields <a href="#temp-WorkingKeyAPI"><i class="fa fa-link" aria-hidden="true"></i>
+    </a></h3>
+
+        <div class="meta">
+            <span class="label label-primary">POST</span>
+            <code>https://beta.soluspay.net/workingKey</code>
+        </div>
+
+        <p class="description">Working key is the key used by EBS for card holder&#39;s info encryption</p>
+
+
+
+
+    
+    
+    <h4>Request Body</h4>
+    <p>The request body should be <code>"application/json"</code> encoded, and should contain an object with the following attributes.</p>
+    <table class="parameters table table-bordered table-striped">
+        <thead>
+            <tr><th>Parameter</th><th>Description</th></tr>
+        </thead>
+        <tbody>
+            
+                
+                    <tr><td class="parameter-name"><code>clientId</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+                    <tr><td class="parameter-name"><code>systemTraceAuditNumber</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+                    <tr><td class="parameter-name"><code>tranDateTime</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+                    <tr><td class="parameter-name"><code>terminalId</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+            
+        </tbody>
+    </table>
+
+
+    </div>
+
+    <div class="col-md-6 section-secondary">
+        
+            
+            
+            <pre class="highlight javascript " data-language="javascript"><code>var url = new URL("https://beta.soluspay.net/workingKey");
+var data = {
+    clientId: ...,
+    systemTraceAuditNumber: ...,
+    tranDateTime: ...,
+    terminalId: ...
+};
+var options = {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+        "content-type": "application/json"
+    }
+};
+
+fetch(url, options).then(function(response) {
+    if (!response.ok) {
+        throw new Error(response.statusText);
+    }
+    console.log(response.json());
+})
+</code></pre>
+        
+            
+            
+            <pre class="highlight python d-none" data-language="python"><code>import requests
+
+url = "https://beta.soluspay.net/workingKey"
+data = {
+    "clientId": ...,
+    "systemTraceAuditNumber": ...,
+    "tranDateTime": ...,
+    "terminalId": ...
+}
+
+response = requests.post(url, json=data)
+response.raise_for_status()
+print(response.json())
+</code></pre>
+        
+    </div>
+</div>
+    
+
+    
+        <div class="row">
+            <div class="col-md-6">
+                <h2 id="ebs_fields" class="coredocs-section-title">
+                    ebs_fields <a href="#ebs_fields"><i class="fa fa-link" aria-hidden="true"></i></a>
+                </h2>
+            </div>
+            <div class="col-md-6 section-secondary"></div>
+        </div>
+    
+    
+        <div class="row coredocs-link">
+    <div class="col-md-6 docs-content">
+        <h3 id="ebs_fields-PurchaseAPI" class="coredocs-link-title">Purchase API <a href="#ebs_fields-PurchaseAPI"><i class="fa fa-link" aria-hidden="true"></i>
+    </a></h3>
+
+        <div class="meta">
+            <span class="label label-primary">POST</span>
+            <code>https://beta.soluspay.net/purchase</code>
+        </div>
+
+        <p class="description">Purchase API for merchants purchases</p>
+
+
+
+
+    
+    
+    <h4>Request Body</h4>
+    <p>The request body should be <code>"application/json"</code> encoded, and should contain an object with the following attributes.</p>
+    <table class="parameters table table-bordered table-striped">
+        <thead>
+            <tr><th>Parameter</th><th>Description</th></tr>
+        </thead>
+        <tbody>
+            
+                
+                    <tr><td class="parameter-name"><code>clientId</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+                    <tr><td class="parameter-name"><code>systemTraceAuditNumber</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+                    <tr><td class="parameter-name"><code>tranDateTime</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+                    <tr><td class="parameter-name"><code>terminalId</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+                    <tr><td class="parameter-name"><code>PAN</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+                    <tr><td class="parameter-name"><code>expDate</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+                    <tr><td class="parameter-name"><code>PIN</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+                    <tr><td class="parameter-name"><code>tranAmount</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+                    <tr><td class="parameter-name"><code>tranCurrencyCode</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+            
+        </tbody>
+    </table>
+
+
+    </div>
+
+    <div class="col-md-6 section-secondary">
+        
+            
+            
+            <pre class="highlight javascript " data-language="javascript"><code>var url = new URL("https://beta.soluspay.net/purchase");
+var data = {
+    clientId: ...,
+    systemTraceAuditNumber: ...,
+    tranDateTime: ...,
+    terminalId: ...,
+    PAN: ...,
+    expDate: ...,
+    PIN: ...,
+    tranAmount: ...,
+    tranCurrencyCode: ...
+};
+var options = {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+        "content-type": "application/json"
+    }
+};
+
+fetch(url, options).then(function(response) {
+    if (!response.ok) {
+        throw new Error(response.statusText);
+    }
+    console.log(response.json());
+})
+</code></pre>
+        
+            
+            
+            <pre class="highlight python d-none" data-language="python"><code>import requests
+
+url = "https://beta.soluspay.net/purchase"
+data = {
+    "clientId": ...,
+    "systemTraceAuditNumber": ...,
+    "tranDateTime": ...,
+    "terminalId": ...,
+    "PAN": ...,
+    "expDate": ...,
+    "PIN": ...,
+    "tranAmount": ...,
+    "tranCurrencyCode": ...
+}
+
+response = requests.post(url, json=data)
+response.raise_for_status()
+print(response.json())
+</code></pre>
+        
+    </div>
+</div>
+    
+        <div class="row coredocs-link">
+    <div class="col-md-6 docs-content">
+        <h3 id="ebs_fields-CardTransferAPI" class="coredocs-link-title">Card Transfer API <a href="#ebs_fields-CardTransferAPI"><i class="fa fa-link" aria-hidden="true"></i>
+    </a></h3>
+
+        <div class="meta">
+            <span class="label label-primary">POST</span>
+            <code>https://beta.soluspay.net/cardTransfer</code>
+        </div>
+
+        <p class="description">Funds transfer API</p>
+
+
+
+
+    
+    
+    <h4>Request Body</h4>
+    <p>The request body should be <code>"application/json"</code> encoded, and should contain an object with the following attributes.</p>
+    <table class="parameters table table-bordered table-striped">
+        <thead>
+            <tr><th>Parameter</th><th>Description</th></tr>
+        </thead>
+        <tbody>
+            
+                
+                    <tr><td class="parameter-name"><code>clientId</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+                    <tr><td class="parameter-name"><code>systemTraceAuditNumber</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+                    <tr><td class="parameter-name"><code>tranDateTime</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+                    <tr><td class="parameter-name"><code>terminalId</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+                    <tr><td class="parameter-name"><code>PAN</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+                    <tr><td class="parameter-name"><code>expDate</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+                    <tr><td class="parameter-name"><code>PIN</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+                    <tr><td class="parameter-name"><code>tranAmount</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+                    <tr><td class="parameter-name"><code>tranCurrencyCode</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+                    <tr><td class="parameter-name"><code>toCard</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+            
+        </tbody>
+    </table>
+
+
+    </div>
+
+    <div class="col-md-6 section-secondary">
+        
+            
+            
+            <pre class="highlight javascript " data-language="javascript"><code>var url = new URL("https://beta.soluspay.net/cardTransfer");
+var data = {
+    clientId: ...,
+    systemTraceAuditNumber: ...,
+    tranDateTime: ...,
+    terminalId: ...,
+    PAN: ...,
+    expDate: ...,
+    PIN: ...,
+    tranAmount: ...,
+    tranCurrencyCode: ...,
+    toCard: ...
+};
+var options = {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+        "content-type": "application/json"
+    }
+};
+
+fetch(url, options).then(function(response) {
+    if (!response.ok) {
+        throw new Error(response.statusText);
+    }
+    console.log(response.json());
+})
+</code></pre>
+        
+            
+            
+            <pre class="highlight python d-none" data-language="python"><code>import requests
+
+url = "https://beta.soluspay.net/cardTransfer"
+data = {
+    "clientId": ...,
+    "systemTraceAuditNumber": ...,
+    "tranDateTime": ...,
+    "terminalId": ...,
+    "PAN": ...,
+    "expDate": ...,
+    "PIN": ...,
+    "tranAmount": ...,
+    "tranCurrencyCode": ...,
+    "toCard": ...
+}
+
+response = requests.post(url, json=data)
+response.raise_for_status()
+print(response.json())
+</code></pre>
+        
+    </div>
+</div>
+    
+        <div class="row coredocs-link">
+    <div class="col-md-6 docs-content">
+        <h3 id="ebs_fields-BalanceAPI" class="coredocs-link-title">Balance API <a href="#ebs_fields-BalanceAPI"><i class="fa fa-link" aria-hidden="true"></i>
+    </a></h3>
+
+        <div class="meta">
+            <span class="label label-primary">POST</span>
+            <code>https://beta.soluspay.net/balance</code>
+        </div>
+
+        <p class="description">Get balance of the user&#39;s card API</p>
+
+
+
+
+    
+    
+    <h4>Request Body</h4>
+    <p>The request body should be <code>"application/json"</code> encoded, and should contain an object with the following attributes.</p>
+    <table class="parameters table table-bordered table-striped">
+        <thead>
+            <tr><th>Parameter</th><th>Description</th></tr>
+        </thead>
+        <tbody>
+            
+                
+                    <tr><td class="parameter-name"><code>clientId</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+                    <tr><td class="parameter-name"><code>systemTraceAuditNumber</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+                    <tr><td class="parameter-name"><code>tranDateTime</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+                    <tr><td class="parameter-name"><code>terminalId</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+                    <tr><td class="parameter-name"><code>PAN</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+                    <tr><td class="parameter-name"><code>expDate</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+                    <tr><td class="parameter-name"><code>PIN</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+                    <tr><td class="parameter-name"><code>tranAmount</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+                    <tr><td class="parameter-name"><code>tranCurrencyCode</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+                    <tr><td class="parameter-name"><code>toCard</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+            
+        </tbody>
+    </table>
+
+
+    </div>
+
+    <div class="col-md-6 section-secondary">
+        
+            
+            
+            <pre class="highlight javascript " data-language="javascript"><code>var url = new URL("https://beta.soluspay.net/balance");
+var data = {
+    clientId: ...,
+    systemTraceAuditNumber: ...,
+    tranDateTime: ...,
+    terminalId: ...,
+    PAN: ...,
+    expDate: ...,
+    PIN: ...,
+    tranAmount: ...,
+    tranCurrencyCode: ...,
+    toCard: ...
+};
+var options = {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+        "content-type": "application/json"
+    }
+};
+
+fetch(url, options).then(function(response) {
+    if (!response.ok) {
+        throw new Error(response.statusText);
+    }
+    console.log(response.json());
+})
+</code></pre>
+        
+            
+            
+            <pre class="highlight python d-none" data-language="python"><code>import requests
+
+url = "https://beta.soluspay.net/balance"
+data = {
+    "clientId": ...,
+    "systemTraceAuditNumber": ...,
+    "tranDateTime": ...,
+    "terminalId": ...,
+    "PAN": ...,
+    "expDate": ...,
+    "PIN": ...,
+    "tranAmount": ...,
+    "tranCurrencyCode": ...,
+    "toCard": ...
+}
+
+response = requests.post(url, json=data)
+response.raise_for_status()
+print(response.json())
+</code></pre>
+        
+    </div>
+</div>
+    
+        <div class="row coredocs-link">
+    <div class="col-md-6 docs-content">
+        <h3 id="ebs_fields-ChangePINAPI" class="coredocs-link-title">Change PIN API <a href="#ebs_fields-ChangePINAPI"><i class="fa fa-link" aria-hidden="true"></i>
+    </a></h3>
+
+        <div class="meta">
+            <span class="label label-primary">POST</span>
+            <code>https://beta.soluspay.net/changePin</code>
+        </div>
+
+        <p class="description">Change a user&#39;s PIN</p>
+
+
+
+
+    
+    
+    <h4>Request Body</h4>
+    <p>The request body should be <code>"application/json"</code> encoded, and should contain an object with the following attributes.</p>
+    <table class="parameters table table-bordered table-striped">
+        <thead>
+            <tr><th>Parameter</th><th>Description</th></tr>
+        </thead>
+        <tbody>
+            
+                
+                    <tr><td class="parameter-name"><code>clientId</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+                    <tr><td class="parameter-name"><code>systemTraceAuditNumber</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+                    <tr><td class="parameter-name"><code>tranDateTime</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+                    <tr><td class="parameter-name"><code>terminalId</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+                    <tr><td class="parameter-name"><code>PAN</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+                    <tr><td class="parameter-name"><code>expDate</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+                    <tr><td class="parameter-name"><code>PIN</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+                    <tr><td class="parameter-name"><code>newPIN</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+            
+        </tbody>
+    </table>
+
+
+    </div>
+
+    <div class="col-md-6 section-secondary">
+        
+            
+            
+            <pre class="highlight javascript " data-language="javascript"><code>var url = new URL("https://beta.soluspay.net/changePin");
+var data = {
+    clientId: ...,
+    systemTraceAuditNumber: ...,
+    tranDateTime: ...,
+    terminalId: ...,
+    PAN: ...,
+    expDate: ...,
+    PIN: ...,
+    newPIN: ...
+};
+var options = {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+        "content-type": "application/json"
+    }
+};
+
+fetch(url, options).then(function(response) {
+    if (!response.ok) {
+        throw new Error(response.statusText);
+    }
+    console.log(response.json());
+})
+</code></pre>
+        
+            
+            
+            <pre class="highlight python d-none" data-language="python"><code>import requests
+
+url = "https://beta.soluspay.net/changePin"
+data = {
+    "clientId": ...,
+    "systemTraceAuditNumber": ...,
+    "tranDateTime": ...,
+    "terminalId": ...,
+    "PAN": ...,
+    "expDate": ...,
+    "PIN": ...,
+    "newPIN": ...
+}
+
+response = requests.post(url, json=data)
+response.raise_for_status()
+print(response.json())
+</code></pre>
+        
+    </div>
+</div>
+    
+        <div class="row coredocs-link">
+    <div class="col-md-6 docs-content">
+        <h3 id="ebs_fields-IsAliveAPI" class="coredocs-link-title">Is Alive API <a href="#ebs_fields-IsAliveAPI"><i class="fa fa-link" aria-hidden="true"></i>
+    </a></h3>
+
+        <div class="meta">
+            <span class="label label-primary">POST</span>
+            <code>https://beta.soluspay.net/isAlive</code>
+        </div>
+
+        <p class="description">Returns the stats of EBS payment gateway</p>
+
+
+
+
+    
+    
+    <h4>Request Body</h4>
+    <p>The request body should be <code>"application/json"</code> encoded, and should contain an object with the following attributes.</p>
+    <table class="parameters table table-bordered table-striped">
+        <thead>
+            <tr><th>Parameter</th><th>Description</th></tr>
+        </thead>
+        <tbody>
+            
+                
+                    <tr><td class="parameter-name"><code>clientId</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+                    <tr><td class="parameter-name"><code>systemTraceAuditNumber</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+                    <tr><td class="parameter-name"><code>tranDateTime</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+                    <tr><td class="parameter-name"><code>terminalId</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+                    <tr><td class="parameter-name"><code>PAN</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+                    <tr><td class="parameter-name"><code>expDate</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+                    <tr><td class="parameter-name"><code>PIN</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+                    <tr><td class="parameter-name"><code>tranAmount</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+                    <tr><td class="parameter-name"><code>tranCurrencyCode</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+                    <tr><td class="parameter-name"><code>toCard</code> <span class="label label-warning">required</span></td><td></td></tr>
+                
+            
+        </tbody>
+    </table>
+
+
+    </div>
+
+    <div class="col-md-6 section-secondary">
+        
+            
+            
+            <pre class="highlight javascript " data-language="javascript"><code>var url = new URL("https://beta.soluspay.net/isAlive");
+var data = {
+    clientId: ...,
+    systemTraceAuditNumber: ...,
+    tranDateTime: ...,
+    terminalId: ...,
+    PAN: ...,
+    expDate: ...,
+    PIN: ...,
+    tranAmount: ...,
+    tranCurrencyCode: ...,
+    toCard: ...
+};
+var options = {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+        "content-type": "application/json"
+    }
+};
+
+fetch(url, options).then(function(response) {
+    if (!response.ok) {
+        throw new Error(response.statusText);
+    }
+    console.log(response.json());
+})
+</code></pre>
+        
+            
+            
+            <pre class="highlight python d-none" data-language="python"><code>import requests
+
+url = "https://beta.soluspay.net/isAlive"
+data = {
+    "clientId": ...,
+    "systemTraceAuditNumber": ...,
+    "tranDateTime": ...,
+    "terminalId": ...,
+    "PAN": ...,
+    "expDate": ...,
+    "PIN": ...,
+    "tranAmount": ...,
+    "tranCurrencyCode": ...,
+    "toCard": ...
+}
+
+response = requests.post(url, json=data)
+response.raise_for_status()
+print(response.json())
+</code></pre>
+        
+    </div>
+</div>
+    
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <script src="/js/jquery-1.10.2.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/api.js"></script>
+    </body>
+</html>
