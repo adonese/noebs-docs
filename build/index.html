@@ -39,17 +39,13 @@
 
     <div class="sidebar">
 
-        <!-- 
+
         <h3 class="brand">
-            <a class="navbar-brand" href="#">API Docs</a>
-            <a href="#">Noebs -- Merchant APIs</a>
-        </h3> -->
-
-
+            <a class="navbar-brand" href="#">Dev Center</a>
+            <!-- <a href="#">Noebs -- Merchant APIs</a> -->
+        </h3>
         <select class="menu-context-mobile">
             <option value="" selected="selected">Go to...</option>
-
-
             <optgroup label="Misc">
                 <option value="#misc-WorkingKeyAPI">
                     Working Key API
@@ -132,16 +128,6 @@
 
                         <h3>Authentication</h3>
                         What is the preferred way of using the API?
-
-                        <h3> Error Codes</h3>
-                        We use different kind of error codes:
-                        <ul>
-                            <li> 400 for validations errors (e.g., missing a required field)</li>
-                            <li> 502 for EBS (payment gateway) errors (e.g., when you have an insufficient balance)</li>
-                            <li> 504 for EBS (payment gateway) timeouts. E.g., EBS server is unreachable</li>
-
-                        </ul>
-
                     </div>
                     <div class="col-md-6 source-code-chooser">
 
@@ -168,6 +154,72 @@
                     </div>
                     <div class="col-md-6 section-secondary"></div>
                 </div>
+
+                <div class="row">
+                    <h1>Error Codes</h1>
+                    We have three types of errors in noebs. It is important to know them so you can understand the api
+                    and the rationale behind the design.
+                    <ul>
+                        <li>Bad Request</li>
+                        And these are the errors you are most likely will encounter during the development. Such as
+                        sending the wrong field type, the wrong length, or missing a field. They are all
+                        <code>4xx</code> Errors.
+                        <li>EBS Errors</li>
+
+                    </ul>
+                </div>
+                <div class="row card">
+                    <table class="parameters table table-bordered table-striped table-rounded">
+                        <thead>
+                            <tr>
+                                <th>Response Code</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="parameter-name" align="right">200 - OK</td>
+                                <td>Successful Transaction
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="parameter-name" align="right">400- Bad Request</td>
+                                <td>Bad request (missing request body fields)</td>
+                            </tr>
+
+                            <tr>
+                                <td class="parameter-name" align="right">401 - Unauthorized</td>
+                                <td>Unauthorized Transaction</td>
+                            </tr>
+
+                            <tr>
+                                <td class="parameter-name" align="right">404 - Not Found</td>
+                                <td>Page not found</td>
+                            </tr>
+                            <tr>
+                                <td class="parameter-name" align="right">405 - Method not Allowed</td>
+                                <td>Wrong HTTP Verb</td>
+                            <tr>
+                                <td class="parameter-name" align="right">403 - Forbiddent</td>
+                                <td>Forbidden</td>
+
+                            <tr>
+                                <td class="parameter-name" align="right">500 - Internal Server Error</td>
+                                <td>Internal Server Error (very rare)</td>
+                            </tr>
+                            <tr>
+                                <td class="parameter-name" align="right">502 - Bad Gateway</td>
+                                <td>EBS Error</td>
+                            </tr>
+                            <tr>
+                                <td class="parameter-name" align="right">504 - Gateway Timeout</td>
+                                <td>EBS unreachable</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
                 <div class="row coredocs-link">
                     <div class="col-md-6 docs-content">
                         <h3 id="misc-WorkingKeyAPI" class="coredocs-link-title">Working Key API <a
@@ -356,8 +408,6 @@ print(response.json())
 
                     <div class="col-md-6 section-secondary">
 
-
-
                         <pre class="highlight javascript " data-language="javascript"><code>var url = new URL("https://beta.soluspay.net/api/purchase");
 var data = {
     clientId: ...,
@@ -423,11 +473,6 @@ print(response.json())
                         </div>
 
                         <p class="description">Funds transfer API</p>
-
-
-
-
-
 
                         <h4>Request Body</h4>
                         <p>The request body should be <code>"application/json"</code> encoded, and should contain an
