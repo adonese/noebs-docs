@@ -23,3 +23,8 @@ The rest is the same as before.
 ## Timeouts
 
 The uuid timeouts in 1 hr.
+
+
+## Quering result API
+
+TODO
