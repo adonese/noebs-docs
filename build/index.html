@@ -126,9 +126,14 @@
                         You get 400 in case of missing a field, or using wron types
                         You get 502 in EBS payment gateway errors (e.g., insufficient fund)
 
+
+                        <br><br>
                         <h3>Authentication</h3>
-                        What is the preferred way of using the API?
+                        We are using Basic Auth for Authentication. Please reach out to request credentials.
+
                     </div>
+                    <br><br>
+
                     <div class="col-md-6 source-code-chooser">
 
                         <ul class="nav nav-pills" id="language-control">
@@ -152,7 +157,6 @@
                             APIs Document <a href="#misc"><i class="fa fa-link" aria-hidden="true"></i></a>
                         </h2>
                     </div>
-                    <div class="col-md-6 section-secondary"></div>
                 </div>
 
                 <div class="row">
@@ -1214,9 +1218,10 @@ print(response.json())
 
                         <h2>EBS Errors</h2>
                         These errors that come from EBS. Like insufficient fund, wrong pin entered. etc. You can find
-                        the whole list of ebs errors here <a href=/errors>EBS Errors Definitions</a> <h3>All 502 OR EBS
+                        the whole list of ebs errors here <a href=/errors>EBS Errors Definitions</a>
+                        <h3>All 502 OR EBS
                             errors have this object</h3>
-                            <code>
+                        <code>
                             {
                             "message": "EBSError",
                             "code": 196,
@@ -1274,6 +1279,15 @@ print(response.json())
 
                     </div>
                 </div>
+
+
+                <div class="col-md-6">
+                    <h2 id="misc" class="coredocs-section-title">
+                        Consumer Web Services <a href="#misc"><i class="fa fa-link" aria-hidden="true"></i></a>
+                    </h2>
+                </div>
+
+
             </div>
         </div>
     </div>
