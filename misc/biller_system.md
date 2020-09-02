@@ -46,7 +46,8 @@ We need to use the original `uuid` (the one you inquired and sent through token 
 Follows our standard 
 
 ```json
-{"message": "Descriptive message about the error", "code": "error_class"}```
+{"message": "Descriptive message about the error", "code": "error_class"}
+```
 
 
 ** note, in this case, the biller ID for Sahil is: `biller:sahil`.
@@ -56,7 +57,9 @@ Follows our standard
 
 We need to use the original `uuid` (the one you inquired and sent through token param) to cancel a particular transaction.
 
-```curl -H "content-type: application/json" -X POST https://api.soluspay.net/api/v1/cancel?id={token}```
+```json
+curl -H "content-type: application/json" -X POST https://api.soluspay.net/api/v1/cancel?id={token}
+```
 
 
 #### Response
