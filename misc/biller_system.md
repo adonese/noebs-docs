@@ -38,7 +38,7 @@ We need to use the original `uuid` (the one you inquired and sent through token 
 ##### Successful response
 
 ```json
-{"result": {"transaction_id": "some_uuid_here", "terminalId": "18000377","systemTraceAuditNumber": 76,"clientId": "ACTS","responseMessage": "Approval","responseStatus": "Successful","responseCode": 0,"tranDateTime": "200419085611","tranFee": 1.5,"additionalAmount": -1}}
+{"result": {"id": "some_uuid_here", "terminalId": "18000377","systemTraceAuditNumber": 76,"clientId": "ACTS","responseMessage": "Approval","responseStatus": "Successful","responseCode": 0,"tranDateTime": "200419085611","tranFee": 1.5,"additionalAmount": -1}}
 ```
 
 ##### Failed response
