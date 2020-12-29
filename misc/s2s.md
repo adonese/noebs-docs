@@ -5,7 +5,8 @@ Depending on the clients business case, we have different integration scenarios.
 -	Server to Server Integration
 -	Hooks integration / mobile or web integrations
 -	SDK integration
-Server to Server
+
+## Server to Server
 -	You get to access our API endpoints directly
 -	JSON request / response
 -	IPIN calculations are done in your side
@@ -19,6 +20,9 @@ Noebs has two schemes for API integrations:
 -	gRPC endpoints
 
 For the REST APIs, the request is the same as for EBS, with one variant in the request header (API-Key)
+
+`Base URL: https://beta.soluspay.net`
+
 
 #### API Request Sample
 
@@ -104,7 +108,16 @@ EBS uses the name Special Payment for online purchases.
 
 ### IPIN Encryption
 
-You can use one of our existing encryption libraries to complete IPIN encryption.
+You can use one of our existing encryption libraries to complete IPIN encryption. You can access it here: https://github.com/adonese/crypto
+
+### Purchase / Payment API
+
+
+Endpoint: `api/v1/purchase`
+Headers:
+- `Content-Type: application/json`
+- `API-Key` Reserved for future
+
 
 | Field | Type |
 |-------|-------|
@@ -179,3 +192,13 @@ EBS specific Errors such as insufficient funds, destination errors, etc.
     }
 }
 ```
+
+## gRPC integration
+
+We also have gRPC integrations. Contact us support@noebs.dev if you are interested in integration with gRPC.
+
+### SDK integration
+
+Currently we provide SDKs for: Java, and JavaScript.
+
+You can get Java SDK from
