@@ -86,4 +86,5 @@ curl -H "content-type: application/json" -X POST https://api.soluspay.net/api/v1
 Follows our standard 
 
 ```json
-{"message": "Descriptive message about the error", "code": "error_class"}```
+{"message": "Descriptive message about the error", "code": "error_class"}
+```
