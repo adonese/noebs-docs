@@ -1,10 +1,10 @@
 ## Noebs Integrations
 
-Depending on the clients business case, we have different integration scenarios. 
-
--	Server to Server Integration
--	Hooks integration / mobile or web integrations
--	SDK integration
+Essentially we have three integrations mode:
+- server to server (in case you have a backend system)
+- SDK integration: 
+The client will use our SDK to integrate with our system (no encryption, easy to use, all error are handled by the sdk, etc)
+- checkout page with Hooks: in the event you want to redirect the user to a checkout page designated for you. The simplest and most easiest form of integration. Hooks are used to integrate with your backend system to inform you about the transaction status. Or, you can use the dashboard to check the transaction status in case you don't have a backend system
 
 ## Server to Server
 -	You get to access our API endpoints directly
@@ -201,4 +201,4 @@ We also have gRPC integrations. Contact us support@noebs.dev if you are interest
 
 Currently we provide SDKs for: Java, and JavaScript.
 
-You can get Java SDK from
+You can get Java SDK from [our open source SDK](https://github.com/noebs/sdk).
