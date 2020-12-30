@@ -193,6 +193,74 @@ EBS specific Errors such as insufficient funds, destination errors, etc.
 }
 ```
 
+### Bill Payment
+
+(This includes: E15, Top Ups, and Electricity).
+
+Endpoint: `api/v1/bill_payment`
+Headers:
+- `Content-Type: application/json`
+- `API-Key` Reserved for future
+
+
+| Field | Type |
+|-------|-------|
+| UUID | string |
+| tranDateTime | string* |
+| applicationId | string |
+| PAN | string |
+| IPIN | string |
+| expDate | string |
+| tranCurrency | string |
+| tranAmount | number(10,2)* |
+| payeeId | string* |
+| paymentInfo | string** |
+
+*payeeId is a unique identifier for Zain, MTN, Sudani, E15, and other billers
+** paymentInfo is specific for the payeeId: for Zain, it is a zain mobile number, for electricity it is the electricity bill number, and so on. We might need to add 
+
+#### List of payeeId / paymentInfo
+
+| Name | payeeId | paymentInfo |
+|------|---------|------------|
+| zain | 0010010001 | MPHONE=09xxxxxx|
+| mtn | 0010010003 |MPHONE=092xxxxx|
+| sudani | 0010010005 |MPHONE=01xxxxxx|
+| Electricity | 0010020001 |METER=04xxxxxxx|
+| E15 | 0010050001 |INVOICE_NUMBER|
+
+#### Response 
+
+(Same as for the previous)
+
+
+#### Card to Card Transfer
+
+
+Endpoint: `api/v1/p2p`
+Headers:
+- `Content-Type: application/json`
+- `API-Key` Reserved for future
+
+#### Request fields
+
+| Field | Type |
+|-------|-------|
+| UUID | string |
+| tranDateTime | string* |
+| applicationId | string |
+| PAN | string |
+| IPIN | string |
+| expDate | string |
+| tranCurrency | string |
+| tranAmount | number(10,2) |
+| toCard | string* |
+
+* toCard is the destination
+
+This api also supports mobile number in future versions.
+
+
 ## gRPC integration
 
 We also have gRPC integrations. Contact us support@noebs.dev if you are interested in integration with gRPC.
