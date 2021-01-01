@@ -229,6 +229,24 @@ Headers:
 | Electricity | 0010020001 |METER=04xxxxxxx|
 | E15 | 0010050001 |INVOICE_NUMBER|
 
+
+#### How to handle E15 bill payment / bill inquiry
+
+E15 has two modes for `paymentInfo`, in case of inquiry and for payment.
+
+For inquiry, the `paymentInfo` field is like the following:
+
+```diff
+1,2c1,2
+< Payment
+< SERVICEID=6/INVOICENUMBER=196222720005633673/PHONENUMBER=0912141679
+---
+> Inquiry
+> SERVICEID=2/INVOICENUMBER=196222720005633673/PHONENUMBER=0912141679
+```
+
+
+
 #### Response 
 
 (Same as for the previous)
