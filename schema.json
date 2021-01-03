@@ -1,7 +1,8 @@
 {
   "openapi": "3.0.0",
+  "site_name": "Noebs docs",
   "info": {
-    "title": "Noebs -- Merchant APIs",
+    "title": "Noebs API Docs",
     "description": "# Introduction\n\nNoebs is a middleware that consumes EBS services. It was built to be simple, developer friendly and customizable enough to be used\nin different scenarios and adapt to variety of different logics.\n\n# Overview\nWe make great use of http status codes; it is one of our design decisions. We believe that they make client codes more easy and it helps us too to make a robust API.\nYou only get 200 on successful transactions.\nYou get 400 in case of missing a field, or using wron types\nYou get 502 in EBS payment gateway errors (e.g., insufficient fund)\n\n# Authentication\nWhat is the preferred way of using the API?\n\n# Error Codes\nWe use different kind of error codes:\n- 400 for validations errors (e.g., missing a required field)\n- 502 for EBS (payment gateway) errors (e.g., when you have an insufficient balance)\n- 504 for EBS (payment gateway) timeouts. E.g., EBS server is unreachable\n\n",
     "contact": {},
     "version": "1.0"
@@ -396,7 +397,123 @@
           }
         }
       }
+    },
+    "/v1/key": {
+      "post": {
+        "tags": ["EBS Fields"],
+        "summary": "Online Payment Key (Consumer)",
+        "description": "This API is used to get public key to be used in encryption",
+        "operationId": "OnlineKeyAPI",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OnlineKeyAPI"
+              },
+              "example": {
+                "applicationId": "provider-application-id",
+                "UUID": "4a6ef7c4-ddfa-42bb-b555-7971e955c01a",
+                "tranDateTime": "200419085611"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          },
+          "502": {
+            "description": "Bad Gateway",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/https%3A~1~1beta.soluspay.net~1api~1balance"
+                },
+                "example": {
+                  "message": "EBSError",
+                  "code": 601,
+                  "status": "EBSError",
+                  "details": {
+                      "UUID": "4a6ef7c4-ddfa-42bb-b555-7971e955c01a",
+                      "responseMessage": "INVALID_APPLICATION_ID",
+                      "responseStatus": "Failed",
+                      "responseCode": 601,
+                      "tranDateTime": "200222113700"
+                  }
+              }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v1/purchase": {
+      "post": {
+        "tags": ["EBS Fields"],
+        "summary": "Online Purchase",
+        "description": "This API is used for online transactions",
+        "operationId": "OnlinePurchaseAPI",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OnlinePaymentAPI"
+              },
+              "example": {
+                "applicationId": "ACTS",
+                "UUID": "4a6ef7c4-ddfa-42bb-b555-7971e955c01a",
+                "tranDateTime": "200419085611",
+                "PAN": "6392560017624665",
+                "expDate": "2303",
+                "IPIN": "encrypted-ipin-block-here",
+                "tranAmount": 950,
+                "tranCurrency": "SDG",
+                "serviceProviderId": "your-merchant-id-here"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          },
+          "502": {
+            "description": "Bad Gateway",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/https%3A~1~1beta.soluspay.net~1api~1balance"
+                },
+                "example": {
+                  "message": "EBSError",
+                  "code": 601,
+                  "status": "EBSError",
+                  "details": {
+                      "UUID": "4a6ef7c4-ddfa-42bb-b555-7971e955c01a",
+                      "responseMessage": "INVALID_APPLICATION_ID",
+                      "responseStatus": "Failed",
+                      "responseCode": 601,
+                      "tranDateTime": "200222113700"
+                  }
+              }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
     }
+
+    
   },
   "components": {
     "schemas": {
@@ -730,6 +847,90 @@
           "tranCurrencyCode": "SDG",
           "toCard": "6391871100137098"
         }
+      },
+      "OnlineKeyAPI": {
+        "title": "Get Public Key API",
+        "required": [
+          "applicationId",
+          "UUID",
+          "tranDateTime",
+        ],
+        "type": "object",
+        "properties": {
+          "applicationId": {
+            "type": "string"
+          },
+          "UUID": {
+            "type": "string"
+           
+          },
+          "tranDateTime": {
+            "type": "string"
+          }
+         
+        },
+        "example": {
+          "clientId": "provider-keys",
+          "UUID": "4a6ef7c4-ddfa-42bb-b555-7971e955c01a",
+          "tranDateTime": "200419085611"
+        }
+      },
+      "OnlinePaymentAPI": {
+        "title": "Online Purchase API",
+        "required": [
+          "applicationId",
+          "UUID",
+          "tranDateTime",
+          "serviceProviderId",
+          "PAN",
+          "expDate",
+          "IPIN",
+          "tranAmount",
+          "tranCurrency"
+        ],
+        "type": "object",
+        "properties": {
+          "applicationId": {
+            "type": "string"
+          },
+          "UUID": {
+            "type": "string"
+           
+          },
+          "tranDateTime": {
+            "type": "string"
+          },
+          "PAN": {
+            "type": "string"
+          },
+          "expDate": {
+            "type": "string"
+          },
+          "IPIN": {
+            "type": "string"
+          },
+          "tranAmount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tranCurrency": {
+            "type": "string"
+          },
+          "serviceProviderId": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "clientId": "provider-keys",
+          "UUID": "4a6ef7c4-ddfa-42bb-b555-7971e955c01a",
+          "tranDateTime": "200419085611",
+          "PAN": "6392560017624665",
+          "expDate": "2303",
+          "PIN": "encrypted-ipin-block-here",
+          "tranAmount": 950,
+          "tranCurrency": "SDG",
+          "serviceProviderId": "your-merchant-id-here"
+        }
       }
     },
     "securitySchemes": {
@@ -742,7 +943,7 @@
   "tags": [
     {
       "name": "EBS Fields",
-      "description": ""
+      "description": "Testing EBS fields output"
     }
   ]
 }

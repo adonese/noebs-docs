@@ -1,0 +1,10 @@
+site_name: Noebs APIs
+
+repo_url: https://github.com/adonese/noebs-docs
+
+theme:
+  name: material
+nav:
+  - index.md
+  - Using Special Payment: biller_system.md
+  - JSON API: s2s.md
