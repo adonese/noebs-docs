@@ -2,9 +2,22 @@ site_name: Noebs APIs
 
 repo_url: https://github.com/adonese/noebs-docs
 
+markdown_extensions:
+    - toc:
+        permalink: "#"
+
 theme:
   name: material
+  logo: assets/logo.png
+  favicon: assets/favicon.ico
 nav:
   - index.md
   - Using Special Payment: biller_system.md
   - JSON API: s2s.md
+  - IFrame / web interface: iframe.md
+  - Our SDKs:
+    - Java SDK: java.md
+    - Java Script SDK: js.md
+    - Flutter / Dart SDK: flutter.sdk
+    - Go SDK: go.sdk
+  - POS / Kiosks: pos.md

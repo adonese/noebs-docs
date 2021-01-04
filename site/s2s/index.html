@@ -1,0 +1,1301 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+    
+    
+      
+        <title>JSON API - Noebs APIs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3b61ea93.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.39b8e14a.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#noebs-integrations" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Noebs APIs" class="md-header-nav__button md-logo" aria-label="Noebs APIs">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            Noebs APIs
+          </span>
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            
+              JSON API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/adonese/noebs-docs/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Noebs APIs" class="md-nav__button md-logo" aria-label="Noebs APIs">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    Noebs APIs
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/adonese/noebs-docs/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+
+  <li class="md-nav__item">
+    <a href=".." class="md-nav__link">
+      Welcome to noebs
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+
+  <li class="md-nav__item">
+    <a href="../biller_system/" class="md-nav__link">
+      Using Special Payment
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        JSON API
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      JSON API
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#noebs-integrations" class="md-nav__link">
+    Noebs Integrations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#server-to-server" class="md-nav__link">
+    Server to Server
+  </a>
+  
+    <nav class="md-nav" aria-label="Server to Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-integration" class="md-nav__link">
+    API Integration
+  </a>
+  
+    <nav class="md-nav" aria-label="API Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-request-sample" class="md-nav__link">
+    API Request Sample
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request" class="md-nav__link">
+    Request
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-sample" class="md-nav__link">
+    Request sample
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#responses" class="md-nav__link">
+    Responses
+  </a>
+  
+    <nav class="md-nav" aria-label="Responses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#payment-request" class="md-nav__link">
+    Payment Request
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ipin-encryption" class="md-nav__link">
+    IPIN Encryption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#purchase-payment-api" class="md-nav__link">
+    Purchase / Payment API
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#responses_1" class="md-nav__link">
+    Responses
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bill-payment" class="md-nav__link">
+    Bill Payment
+  </a>
+  
+    <nav class="md-nav" aria-label="Bill Payment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-of-payeeid-paymentinfo" class="md-nav__link">
+    List of payeeId / paymentInfo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-of-all-noebs-billers" class="md-nav__link">
+    List of all noebs billers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-handle-e15-bill-payment-bill-inquiry" class="md-nav__link">
+    How to handle E15 bill payment / bill inquiry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response" class="md-nav__link">
+    Response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#card-to-card-transfer" class="md-nav__link">
+    Card to Card Transfer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-fields" class="md-nav__link">
+    Request fields
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grpc-integration" class="md-nav__link">
+    gRPC integration
+  </a>
+  
+    <nav class="md-nav" aria-label="gRPC integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sdk-integration" class="md-nav__link">
+    SDK integration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+
+  <li class="md-nav__item">
+    <a href="../iframe.md" class="md-nav__link">
+      IFrame / web interface
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+
+  
+  <li class="md-nav__item md-nav__item--nested">
+    
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" >
+    
+    <label class="md-nav__link" for="nav-5">
+      Our SDKs
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Our SDKs" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon"></span>
+        Our SDKs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../java.md" class="md-nav__link">
+      Java SDK
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../js.md" class="md-nav__link">
+      Java Script SDK
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../flutter.sdk" class="md-nav__link">
+      Flutter / Dart SDK
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../go.sdk" class="md-nav__link">
+      Go SDK
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+
+  <li class="md-nav__item">
+    <a href="../pos.md" class="md-nav__link">
+      POS / Kiosks
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#noebs-integrations" class="md-nav__link">
+    Noebs Integrations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#server-to-server" class="md-nav__link">
+    Server to Server
+  </a>
+  
+    <nav class="md-nav" aria-label="Server to Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-integration" class="md-nav__link">
+    API Integration
+  </a>
+  
+    <nav class="md-nav" aria-label="API Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-request-sample" class="md-nav__link">
+    API Request Sample
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request" class="md-nav__link">
+    Request
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-sample" class="md-nav__link">
+    Request sample
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#responses" class="md-nav__link">
+    Responses
+  </a>
+  
+    <nav class="md-nav" aria-label="Responses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#payment-request" class="md-nav__link">
+    Payment Request
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ipin-encryption" class="md-nav__link">
+    IPIN Encryption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#purchase-payment-api" class="md-nav__link">
+    Purchase / Payment API
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#responses_1" class="md-nav__link">
+    Responses
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bill-payment" class="md-nav__link">
+    Bill Payment
+  </a>
+  
+    <nav class="md-nav" aria-label="Bill Payment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-of-payeeid-paymentinfo" class="md-nav__link">
+    List of payeeId / paymentInfo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-of-all-noebs-billers" class="md-nav__link">
+    List of all noebs billers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-handle-e15-bill-payment-bill-inquiry" class="md-nav__link">
+    How to handle E15 bill payment / bill inquiry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response" class="md-nav__link">
+    Response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#card-to-card-transfer" class="md-nav__link">
+    Card to Card Transfer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-fields" class="md-nav__link">
+    Request fields
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grpc-integration" class="md-nav__link">
+    gRPC integration
+  </a>
+  
+    <nav class="md-nav" aria-label="gRPC integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sdk-integration" class="md-nav__link">
+    SDK integration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/adonese/noebs-docs/edit/master/docs/s2s.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>JSON API</h1>
+                
+                <h2 id="noebs-integrations">Noebs Integrations<a class="headerlink" href="#noebs-integrations" title="Permanent link">#</a></h2>
+<p>Essentially we have three integrations mode:</p>
+<ul>
+<li>server to server (in case you have a backend system)</li>
+<li>SDK integration: 
+The client will use our SDK to integrate with our system (no encryption, easy to use, all error are handled by the sdk, etc)</li>
+<li>checkout page with Hooks: in the event you want to redirect the user to a checkout page designated for you. The simplest and most easiest form of integration. Hooks are used to integrate with your backend system to inform you about the transaction status. Or, you can use the dashboard to check the transaction status in case you don't have a backend system</li>
+</ul>
+<h2 id="server-to-server">Server to Server<a class="headerlink" href="#server-to-server" title="Permanent link">#</a></h2>
+<ul>
+<li>You get to access our API endpoints directly</li>
+<li>JSON request / response</li>
+<li>IPIN calculations are done in your side</li>
+</ul>
+<p>Usually, server is more tailored and suitable when the client already have a backend system. The downside is the key management and encryption. </p>
+<h3 id="api-integration">API Integration<a class="headerlink" href="#api-integration" title="Permanent link">#</a></h3>
+<p>Noebs has two schemes for API integrations:
+-   HTTPS + RESTful APIs
+-   gRPC endpoints</p>
+<p>For the REST APIs, the request is the same as for EBS, with one variant in the request header (API-Key)</p>
+<p><code>Base URL: https://beta.soluspay.net</code></p>
+<h4 id="api-request-sample">API Request Sample<a class="headerlink" href="#api-request-sample" title="Permanent link">#</a></h4>
+<p><code>/api/v1/key</code></p>
+<p>Get public Key for encryption</p>
+<h3 id="request">Request<a class="headerlink" href="#request" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UUID</td>
+<td>string*</td>
+</tr>
+<tr>
+<td>tranDateTime</td>
+<td>string*</td>
+</tr>
+<tr>
+<td>applicationId</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>tranDateTime</code> is time in ISO8601 format: YYMMDDHHmmss, for example 29/12/2020 T 11:11:00 is translated into: <code>201229111100</code>.</li>
+<li><code>UUID</code> is UUID v4.</li>
+</ul>
+<h3 id="request-sample">Request sample<a class="headerlink" href="#request-sample" title="Permanent link">#</a></h3>
+<pre><code class="json">{&quot;tranDateTime&quot;: &quot;200222113700&quot;,  &quot;applicationId&quot;: &quot;ACTSCon&quot;, &quot;UUID&quot;: &quot;4a6ef7c4-ddfa-42bb-b555-7971e955c01a&quot;}
+</code></pre>
+
+<h2 id="responses">Responses<a class="headerlink" href="#responses" title="Permanent link">#</a></h2>
+<ul>
+<li>400 (Bad Request)</li>
+</ul>
+<pre><code class="json">{
+    &quot;message&quot;: &quot;Request fields validation error&quot;,
+    &quot;code&quot;: 400,
+    &quot;status&quot;: &quot;BadRequest&quot;,
+    &quot;details&quot;: [
+        {
+            &quot;applicationId&quot;: &quot;this field is required&quot;
+        },
+        {
+            &quot;UUID&quot;: &quot;this field is required&quot;
+        }
+    ]
+}
+</code></pre>
+
+<ul>
+<li>502 (EBS Errors)</li>
+</ul>
+<p>EBS specific Errors such as insufficient funds, destination errors, etc.</p>
+<pre><code class="json">{
+    &quot;message&quot;: &quot;EBSError&quot;,
+    &quot;code&quot;: 601,
+    &quot;status&quot;: &quot;EBSError&quot;,
+    &quot;details&quot;: {
+        &quot;UUID&quot;: &quot;4a6ef7c4-ddfa-42bb-b555-7971e955c01a&quot;,
+        &quot;responseMessage&quot;: &quot;INVALID_APPLICATION_ID&quot;,
+        &quot;responseStatus&quot;: &quot;Failed&quot;,
+        &quot;responseCode&quot;: 601,
+        &quot;tranDateTime&quot;: &quot;200222113700&quot;
+    }
+}
+</code></pre>
+
+<ul>
+<li>200 (Successful responses)</li>
+</ul>
+<pre><code class="json">{
+    &quot;ebs_response&quot;: {
+        &quot;pubKeyValue&quot;: &quot;MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBANx4gKYSMv3CrWWsxdPfxDxFvl+Is/0kc1dvMI1yNWDXI3AgdI4127KMUOv7gmwZ6SnRsHX/KAM0IPRe0+Sa0vMCAwEAAQ==&quot;,
+        &quot;UUID&quot;: &quot;4a6ef7c4-ddfa-42bb-b555-7971e955c01a&quot;,
+        &quot;responseMessage&quot;: &quot;Approved&quot;,
+        &quot;responseStatus&quot;: &quot;Successful&quot;,
+        &quot;responseCode&quot;: 0,
+        &quot;tranDateTime&quot;: &quot;200222113700&quot;
+    }
+}
+</code></pre>
+
+<p><strong>NOTE THAT OUR RESPONSE FOR FAILURE CASES ONLY VARIES FROM EBS IN <code>ebs_response</code> FIELD</strong>. The rest is fully compatible with EBS.</p>
+<h3 id="payment-request">Payment Request<a class="headerlink" href="#payment-request" title="Permanent link">#</a></h3>
+<p>EBS uses the name Special Payment for online purchases.</p>
+<h3 id="ipin-encryption">IPIN Encryption<a class="headerlink" href="#ipin-encryption" title="Permanent link">#</a></h3>
+<p>You can use one of our existing encryption libraries to complete IPIN encryption. You can access it here: https://github.com/adonese/crypto</p>
+<h3 id="purchase-payment-api">Purchase / Payment API<a class="headerlink" href="#purchase-payment-api" title="Permanent link">#</a></h3>
+<p>Endpoint: <code>api/v1/purchase</code>
+Headers:
+- <code>Content-Type: application/json</code>
+- <code>API-Key</code> Reserved for future</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UUID</td>
+<td>string</td>
+</tr>
+<tr>
+<td>tranDateTime</td>
+<td>string*</td>
+</tr>
+<tr>
+<td>applicationId</td>
+<td>string</td>
+</tr>
+<tr>
+<td>PAN</td>
+<td>string</td>
+</tr>
+<tr>
+<td>IPIN</td>
+<td>string</td>
+</tr>
+<tr>
+<td>expDate</td>
+<td>string</td>
+</tr>
+<tr>
+<td>tranCurrency</td>
+<td>string</td>
+</tr>
+<tr>
+<td>tranAmount</td>
+<td>number(10,2)*</td>
+</tr>
+<tr>
+<td>serviceProviderId</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<p><strong> <code>tranAmount</code> only accepts 2 digits after the floating point.
+</strong> <code>serviceProviderId</code> is a biller ID (bank account) for the beneficiary.</p>
+<ul>
+<li><code>tranDateTime</code> is time in ISO8601 format: YYMMDDHHmmss, for example 29/12/2020 T 11:11:00 is translated into: <code>201229111100</code>.</li>
+</ul>
+<h3 id="responses_1">Responses<a class="headerlink" href="#responses_1" title="Permanent link">#</a></h3>
+<p>Same as for key responses.</p>
+<ul>
+<li>400 (Bad Request)</li>
+</ul>
+<pre><code class="json">{
+    &quot;message&quot;: &quot;Request fields validation error&quot;,
+    &quot;code&quot;: 400,
+    &quot;status&quot;: &quot;BadRequest&quot;,
+    &quot;details&quot;: [
+        {
+            &quot;applicationId&quot;: &quot;this field is required&quot;
+        },
+        {
+            &quot;UUID&quot;: &quot;this field is required&quot;
+        }
+    ]
+}
+</code></pre>
+
+<ul>
+<li>502 (EBS Errors)</li>
+</ul>
+<p>EBS specific Errors such as insufficient funds, destination errors, etc.</p>
+<pre><code class="json">{
+    &quot;message&quot;: &quot;EBSError&quot;,
+    &quot;code&quot;: 601,
+    &quot;status&quot;: &quot;EBSError&quot;,
+    &quot;details&quot;: {
+        &quot;UUID&quot;: &quot;4a6ef7c4-ddfa-42bb-b555-7971e955c01a&quot;,
+        &quot;responseMessage&quot;: &quot;INVALID_APPLICATION_ID&quot;,
+        &quot;responseStatus&quot;: &quot;Failed&quot;,
+        &quot;responseCode&quot;: 601,
+        &quot;tranDateTime&quot;: &quot;200222113700&quot;
+    }
+}
+</code></pre>
+
+<ul>
+<li>200 (Successful responses)</li>
+</ul>
+<pre><code class="json">{
+    &quot;ebs_response&quot;: {
+        &quot;UUID&quot;: &quot;4a6ef7c4-ddfa-42bb-b555-7971e955c01a&quot;,
+        &quot;responseMessage&quot;: &quot;Approved&quot;,
+        &quot;responseStatus&quot;: &quot;Successful&quot;,
+        &quot;responseCode&quot;: 0,
+        &quot;tranDateTime&quot;: &quot;200222113700&quot;
+    }
+}
+</code></pre>
+
+<h3 id="bill-payment">Bill Payment<a class="headerlink" href="#bill-payment" title="Permanent link">#</a></h3>
+<p>(This includes: E15, Top Ups, and Electricity).</p>
+<p>Endpoint: <code>api/v1/bill_payment</code>
+Headers:
+- <code>Content-Type: application/json</code>
+- <code>API-Key</code> Reserved for future</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UUID</td>
+<td>string</td>
+</tr>
+<tr>
+<td>tranDateTime</td>
+<td>string*</td>
+</tr>
+<tr>
+<td>applicationId</td>
+<td>string</td>
+</tr>
+<tr>
+<td>PAN</td>
+<td>string</td>
+</tr>
+<tr>
+<td>IPIN</td>
+<td>string</td>
+</tr>
+<tr>
+<td>expDate</td>
+<td>string</td>
+</tr>
+<tr>
+<td>tranCurrency</td>
+<td>string</td>
+</tr>
+<tr>
+<td>tranAmount</td>
+<td>number(10,2)*</td>
+</tr>
+<tr>
+<td>payeeId</td>
+<td>string*</td>
+</tr>
+<tr>
+<td>paymentInfo</td>
+<td>string**</td>
+</tr>
+</tbody>
+</table>
+<p><em>payeeId is a unique identifier for Zain, MTN, Sudani, E15, and other billers
+</em>* paymentInfo is specific for the payeeId: for Zain, it is a zain mobile number, for electricity it is the electricity bill number, and so on. We might need to add </p>
+<h4 id="list-of-payeeid-paymentinfo">List of payeeId / paymentInfo<a class="headerlink" href="#list-of-payeeid-paymentinfo" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>payeeId</th>
+<th>paymentInfo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>zain</td>
+<td>0010010001</td>
+<td>MPHONE=09xxxxxx</td>
+</tr>
+<tr>
+<td>mtn</td>
+<td>0010010003</td>
+<td>MPHONE=092xxxxx</td>
+</tr>
+<tr>
+<td>sudani</td>
+<td>0010010005</td>
+<td>MPHONE=01xxxxxx</td>
+</tr>
+<tr>
+<td>Electricity</td>
+<td>0010020001</td>
+<td>METER=04xxxxxxx</td>
+</tr>
+<tr>
+<td>E15</td>
+<td>0010050001</td>
+<td>INVOICE_NUMBER</td>
+</tr>
+</tbody>
+</table>
+<h4 id="list-of-all-noebs-billers">List of all noebs billers<a class="headerlink" href="#list-of-all-noebs-billers" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>payeeId</th>
+<th>paymentInfo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>zainTopUp</td>
+<td>0010010001</td>
+<td>MPHONE=01xxxxxx</td>
+</tr>
+<tr>
+<td>zainBillPayment</td>
+<td>0010010002</td>
+<td>MPHONE=01xxxxxx</td>
+</tr>
+<tr>
+<td>mtnTopUp</td>
+<td>0010010003</td>
+<td>MPHONE=01xxxxxx</td>
+</tr>
+<tr>
+<td>mtnBillPayment</td>
+<td>0010010004</td>
+<td>MPHONE=01xxxxxx</td>
+</tr>
+<tr>
+<td>sudaniTopUp</td>
+<td>0010010005</td>
+<td>MPHONE=01xxxxxx</td>
+</tr>
+<tr>
+<td>sudaniBillPayment</td>
+<td>0010010006</td>
+<td>MPHONE=01xxxxxx</td>
+</tr>
+<tr>
+<td>necPayment</td>
+<td>0010020001</td>
+<td>METER=meter_number</td>
+</tr>
+<tr>
+<td>zainBillInquiry</td>
+<td>0010010002</td>
+<td>MPHONE=01xxxxxx</td>
+</tr>
+<tr>
+<td>mtnBillInquiry</td>
+<td>0010010004</td>
+<td>MPHONE=01xxxxxx</td>
+</tr>
+<tr>
+<td>sudaniBillInquiry</td>
+<td>0010010006</td>
+<td>MPHONE=01xxxxxx</td>
+</tr>
+<tr>
+<td>moheBillInquiry</td>
+<td>0010030002</td>
+<td></td>
+</tr>
+<tr>
+<td>moheBillPayment</td>
+<td>0010030002</td>
+<td></td>
+</tr>
+<tr>
+<td>customsBillInquiry</td>
+<td>0010030003</td>
+<td></td>
+</tr>
+<tr>
+<td>customsBillPayment</td>
+<td>0010030003</td>
+<td></td>
+</tr>
+<tr>
+<td>moheArabBillInquiry</td>
+<td>0010030004</td>
+<td></td>
+</tr>
+<tr>
+<td>moheArabBillPayment</td>
+<td>0010030004</td>
+<td></td>
+</tr>
+<tr>
+<td>e15BillInquiry</td>
+<td>0010050001</td>
+<td></td>
+</tr>
+<tr>
+<td>e15BillPayment</td>
+<td>0010050001</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="how-to-handle-e15-bill-payment-bill-inquiry">How to handle E15 bill payment / bill inquiry<a class="headerlink" href="#how-to-handle-e15-bill-payment-bill-inquiry" title="Permanent link">#</a></h4>
+<p>E15 has two modes for <code>paymentInfo</code>, in case of inquiry and for payment.</p>
+<p>For inquiry, the <code>paymentInfo</code> field is like the following:</p>
+<pre><code class="diff">1,2c1,2
+&lt; Payment
+&lt; SERVICEID=6/INVOICENUMBER=196222720005633673/PHONENUMBER=0912141679
+---
+&gt; Inquiry
+&gt; SERVICEID=2/INVOICENUMBER=196222720005633673/PHONENUMBER=0912141679
+</code></pre>
+
+<h4 id="response">Response<a class="headerlink" href="#response" title="Permanent link">#</a></h4>
+<p>(Same as for the previous)</p>
+<h4 id="card-to-card-transfer">Card to Card Transfer<a class="headerlink" href="#card-to-card-transfer" title="Permanent link">#</a></h4>
+<p>Endpoint: <code>api/v1/p2p</code>
+Headers:
+- <code>Content-Type: application/json</code>
+- <code>API-Key</code> Reserved for future</p>
+<h4 id="request-fields">Request fields<a class="headerlink" href="#request-fields" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UUID</td>
+<td>string</td>
+</tr>
+<tr>
+<td>tranDateTime</td>
+<td>string*</td>
+</tr>
+<tr>
+<td>applicationId</td>
+<td>string</td>
+</tr>
+<tr>
+<td>PAN</td>
+<td>string</td>
+</tr>
+<tr>
+<td>IPIN</td>
+<td>string</td>
+</tr>
+<tr>
+<td>expDate</td>
+<td>string</td>
+</tr>
+<tr>
+<td>tranCurrency</td>
+<td>string</td>
+</tr>
+<tr>
+<td>tranAmount</td>
+<td>number(10,2)</td>
+</tr>
+<tr>
+<td>toCard</td>
+<td>string*</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>toCard is the destination</li>
+</ul>
+<p>This api also supports mobile number in future versions.</p>
+<h2 id="grpc-integration">gRPC integration<a class="headerlink" href="#grpc-integration" title="Permanent link">#</a></h2>
+<p>We also have gRPC integrations. Contact us support@noebs.dev if you are interested in integration with gRPC.</p>
+<h3 id="sdk-integration">SDK integration<a class="headerlink" href="#sdk-integration" title="Permanent link">#</a></h3>
+<p>Currently we provide SDKs for: Java, and JavaScript.</p>
+<p>You can get Java SDK from <a href="https://github.com/noebs/sdk">our open source SDK</a>.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../biller_system/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Using Special Payment
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.08c56446.min.js"></script>
+      <script src="../assets/javascripts/bundle.6ced434e.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.8c7e0a7e.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

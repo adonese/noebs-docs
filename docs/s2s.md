@@ -1,12 +1,14 @@
 ## Noebs Integrations
 
 Essentially we have three integrations mode:
+
 - server to server (in case you have a backend system)
 - SDK integration: 
 The client will use our SDK to integrate with our system (no encryption, easy to use, all error are handled by the sdk, etc)
 - checkout page with Hooks: in the event you want to redirect the user to a checkout page designated for you. The simplest and most easiest form of integration. Hooks are used to integrate with your backend system to inform you about the transaction status. Or, you can use the dashboard to check the transaction status in case you don't have a backend system
 
 ## Server to Server
+
 -	You get to access our API endpoints directly
 -	JSON request / response
 -	IPIN calculations are done in your side
@@ -34,12 +36,18 @@ Get public Key for encryption
 
 | Field | Type |
 |-------|-------|
-| UUID | string |
+| UUID | string* |
 | tranDateTime | string* |
 | applicationId | string |
 
 * `tranDateTime` is time in ISO8601 format: YYMMDDHHmmss, for example 29/12/2020 T 11:11:00 is translated into: `201229111100`.
+* `UUID` is UUID v4.
 
+### Request sample
+
+```json
+{"tranDateTime": "200222113700",  "applicationId": "ACTSCon", "UUID": "4a6ef7c4-ddfa-42bb-b555-7971e955c01a"}
+```
 
 ## Responses
 
@@ -100,10 +108,6 @@ EBS specific Errors such as insufficient funds, destination errors, etc.
 ### Payment Request 
 
 EBS uses the name Special Payment for online purchases.
-
-#### Request fields
-
-
 
 
 ### IPIN Encryption
@@ -229,6 +233,28 @@ Headers:
 | Electricity | 0010020001 |METER=04xxxxxxx|
 | E15 | 0010050001 |INVOICE_NUMBER|
 
+
+#### List of all noebs billers
+| Name | payeeId | paymentInfo |
+|------|---------|------------|
+	| zainTopUp           |  0010010001|MPHONE=01xxxxxx|
+	| zainBillPayment     |  0010010002|MPHONE=01xxxxxx|
+	| mtnTopUp            |  0010010003|MPHONE=01xxxxxx|
+	| mtnBillPayment      |  0010010004|MPHONE=01xxxxxx|
+	| sudaniTopUp         |  0010010005|MPHONE=01xxxxxx|
+	| sudaniBillPayment   |  0010010006|MPHONE=01xxxxxx|
+	| necPayment          |  0010020001|METER=meter_number|
+	| zainBillInquiry     |  0010010002|MPHONE=01xxxxxx|
+	| mtnBillInquiry      |  0010010004|MPHONE=01xxxxxx|
+	| sudaniBillInquiry   |  0010010006|MPHONE=01xxxxxx|
+	| moheBillInquiry     |  0010030002| |
+	| moheBillPayment     |  0010030002| |
+	| customsBillInquiry  |  0010030003| |
+	| customsBillPayment  |  0010030003| |
+	| moheArabBillInquiry |  0010030004| |
+	| moheArabBillPayment |  0010030004| |
+	| e15BillInquiry      |  0010050001| |
+	| e15BillPayment      |  0010050001| |
 
 #### How to handle E15 bill payment / bill inquiry
 
