@@ -9,7 +9,7 @@
       
       
       
-      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <link rel="shortcut icon" href="../assets/favicon.ico">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
     
     
@@ -73,8 +73,7 @@
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href=".." title="Noebs APIs" class="md-header-nav__button md-logo" aria-label="Noebs APIs">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <img src="../assets/logo.png" alt="logo">
 
     </a>
     <label class="md-header-nav__button md-icon" for="__drawer">
@@ -166,8 +165,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="Noebs APIs" class="md-nav__button md-logo" aria-label="Noebs APIs">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <img src="../assets/logo.png" alt="logo">
 
     </a>
     Noebs APIs
@@ -372,6 +370,113 @@
   </li>
 
     
+      
+      
+      
+
+
+
+  <li class="md-nav__item">
+    <a href="../iframe.md" class="md-nav__link">
+      IFrame / web interface
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+
+  
+  <li class="md-nav__item md-nav__item--nested">
+    
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" >
+    
+    <label class="md-nav__link" for="nav-5">
+      Our SDKs
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Our SDKs" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon"></span>
+        Our SDKs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../java.md" class="md-nav__link">
+      Java SDK
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../js.md" class="md-nav__link">
+      Java Script SDK
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../flutter.sdk" class="md-nav__link">
+      Flutter / Dart SDK
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../go.sdk" class="md-nav__link">
+      Go SDK
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+
+  <li class="md-nav__item">
+    <a href="../pos.md" class="md-nav__link">
+      POS / Kiosks
+    </a>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -527,12 +632,12 @@
                   </a>
                 
                 
-                <h1 id="how-to-use-solus-biller-system">How to use Solus Biller System</h1>
-<h2 id="how-to-use-the-new-api">How to use the new API</h2>
-<h4 id="request-a-new-token">Request a new token</h4>
+                <h1 id="how-to-use-solus-biller-system">How to use Solus Biller System<a class="headerlink" href="#how-to-use-solus-biller-system" title="Permanent link">#</a></h1>
+<h2 id="how-to-use-the-new-api">How to use the new API<a class="headerlink" href="#how-to-use-the-new-api" title="Permanent link">#</a></h2>
+<h4 id="request-a-new-token">Request a new token<a class="headerlink" href="#request-a-new-token" title="Permanent link">#</a></h4>
 <p>First you need to initialize the paymnet, to do that head over to this link:</p>
 <p><code>curl -H "content-type: application/json" -X POST https://api.soluspay.net/api/v1/payment_token</code></p>
-<h4 id="response">Response</h4>
+<h4 id="response">Response<a class="headerlink" href="#response" title="Permanent link">#</a></h4>
 <p>The response is in terms of UUID v4 data. It is secure, and don't collide</p>
 <pre><code class="json">{&quot;result&quot;:{&quot;id&quot;:&quot;dabceba4-2d23-41d9-9832-f4f005353ce0&quot;,&quot;uuid&quot;:&quot;dabceba4-2d23-41d9-9832-f4f005353ce0&quot;},&quot;uuid&quot;:&quot;dabceba4-2d23-41d9-9832-f4f005353ce0&quot;}
 </code></pre>
@@ -544,38 +649,38 @@
 <p>https://sahil.soluspay.net?id={tawasul_reference_id}&amp;amount={entered_amount}&amp;token={uuid}</p>
 <p>For example: http://sahil.soluspay.net/?id=123&amp;token=cf455236-69dd-410e-9996-c828d874d6d4&amp;amount=50</p>
 <p>This is the link you will be sharing in your mobile app or your website (iframe) to offer the payment ability.</p>
-<h2 id="timeouts">Timeouts</h2>
+<h2 id="timeouts">Timeouts<a class="headerlink" href="#timeouts" title="Permanent link">#</a></h2>
 <ul>
 <li><strong>The uuid timeouts in 1 hr</strong></li>
 </ul>
-<h2 id="quering-result-api">Quering result API</h2>
+<h2 id="quering-result-api">Quering result API<a class="headerlink" href="#quering-result-api" title="Permanent link">#</a></h2>
 <p>In case, you want to see the previous transactions, we offer a querying api.</p>
 <p>We need to use the original <code>uuid</code> (the one you inquired and sent through token param) and the biller id assigned to each biller to retrieve the status of a particular transaction.</p>
 <p><code>curl -H "content-type: application/json" -X POST https://api.soluspay.net/api/v1/info?id={token}&amp;biller={biller_id}</code></p>
-<h4 id="response_1">Response</h4>
-<h5 id="successful-response">Successful response</h5>
+<h4 id="response_1">Response<a class="headerlink" href="#response_1" title="Permanent link">#</a></h4>
+<h5 id="successful-response">Successful response<a class="headerlink" href="#successful-response" title="Permanent link">#</a></h5>
 <pre><code class="json">{&quot;id&quot;: &quot;some_uuid_here&quot;, &quot;terminalId&quot;: &quot;18000377&quot;,&quot;systemTraceAuditNumber&quot;: 76,&quot;clientId&quot;: &quot;ACTS&quot;,&quot;responseMessage&quot;: &quot;Approval&quot;,&quot;responseStatus&quot;: &quot;Successful&quot;,&quot;responseCode&quot;: 0,&quot;tranDateTime&quot;: &quot;200419085611&quot;,&quot;tranFee&quot;: 1.5,&quot;additionalAmount&quot;: -1}
 </code></pre>
 
-<h5 id="failed-response">Failed response</h5>
+<h5 id="failed-response">Failed response<a class="headerlink" href="#failed-response" title="Permanent link">#</a></h5>
 <p>Follows our standard </p>
 <pre><code class="json">{&quot;message&quot;: &quot;Descriptive message about the error&quot;, &quot;code&quot;: &quot;error_class&quot;}
 </code></pre>
 
 <p><strong>note, in this case, the biller ID for Sahil is: <code>biller:identifer_id</code>.</strong></p>
-<h2 id="cancel-transaction">Cancel transaction</h2>
+<h2 id="cancel-transaction">Cancel transaction<a class="headerlink" href="#cancel-transaction" title="Permanent link">#</a></h2>
 <p>You can also offer to your users Cancellation or do that automatically.
 We need to use the original <code>uuid</code> (the one you inquired and sent through token param) to cancel a particular transaction.</p>
 <pre><code class="json">curl -H &quot;content-type: application/json&quot; -X POST https://api.soluspay.net/api/v1/cancel?id={token}
 </code></pre>
 
-<h4 id="response_2">Response</h4>
+<h4 id="response_2">Response<a class="headerlink" href="#response_2" title="Permanent link">#</a></h4>
 <p><strong>Always check for status codes</strong></p>
-<h5 id="successful-response_1">Successful response</h5>
+<h5 id="successful-response_1">Successful response<a class="headerlink" href="#successful-response_1" title="Permanent link">#</a></h5>
 <pre><code class="json">{&quot;result&quot;: true}
 </code></pre>
 
-<h5 id="failed-response_1">Failed response</h5>
+<h5 id="failed-response_1">Failed response<a class="headerlink" href="#failed-response_1" title="Permanent link">#</a></h5>
 <p>Follows our standard </p>
 <pre><code class="json">{&quot;message&quot;: &quot;Descriptive message about the error&quot;, &quot;code&quot;: &quot;error_class&quot;}
 </code></pre>
