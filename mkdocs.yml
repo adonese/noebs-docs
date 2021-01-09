@@ -3,8 +3,11 @@ site_name: Noebs APIs
 repo_url: https://github.com/adonese/noebs-docs
 
 markdown_extensions:
-    - toc:
-        permalink: "#"
+  - pymdownx.details
+  - pymdownx.superfences
+  - toc:
+     permalink: ¶
+
 
 theme:
   name: material
@@ -15,9 +18,10 @@ nav:
   - Using Special Payment: biller_system.md
   - JSON API: s2s.md
   - IFrame / web interface: iframe.md
+  - Encryption: encryption.md
   - Our SDKs:
     - Java SDK: java.md
     - Java Script SDK: js.md
-    - Flutter / Dart SDK: flutter.sdk
+    - Flutter / Dart SDK: flutter.md
     - Go SDK: go.sdk
   - POS / Kiosks: pos.md
