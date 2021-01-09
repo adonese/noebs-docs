@@ -16,7 +16,7 @@ Add the sdk to your dependancies
 	dependencies {
 	        implementation 'com.github.fakhrisati:solussdk:1.0.0'
 	}
- ```
+```
 
 ```java
 public static void main(String[] args) {
