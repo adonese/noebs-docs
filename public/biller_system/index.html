@@ -389,18 +389,31 @@
 
 
 
+  <li class="md-nav__item">
+    <a href="../encryption/" class="md-nav__link">
+      Encryption
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+
   
   <li class="md-nav__item md-nav__item--nested">
     
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" >
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" >
     
-    <label class="md-nav__link" for="nav-5">
+    <label class="md-nav__link" for="nav-6">
       Our SDKs
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Our SDKs" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
+      <label class="md-nav__title" for="nav-6">
         <span class="md-nav__icon md-icon"></span>
         Our SDKs
       </label>
@@ -414,7 +427,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../java.md" class="md-nav__link">
+    <a href="../java/" class="md-nav__link">
       Java SDK
     </a>
   </li>
@@ -440,7 +453,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../flutter.sdk" class="md-nav__link">
+    <a href="../flutter.md" class="md-nav__link">
       Flutter / Dart SDK
     </a>
   </li>
@@ -632,15 +645,15 @@
                   </a>
                 
                 
-                <h1 id="how-to-use-solus-biller-system">How to use Solus Biller System<a class="headerlink" href="#how-to-use-solus-biller-system" title="Permanent link">#</a></h1>
-<h2 id="how-to-use-the-new-api">How to use the new API<a class="headerlink" href="#how-to-use-the-new-api" title="Permanent link">#</a></h2>
-<h4 id="request-a-new-token">Request a new token<a class="headerlink" href="#request-a-new-token" title="Permanent link">#</a></h4>
+                <h1 id="how-to-use-solus-biller-system">How to use Solus Biller System<a class="headerlink" href="#how-to-use-solus-biller-system" title="Permanent link">¶</a></h1>
+<h2 id="how-to-use-the-new-api">How to use the new API<a class="headerlink" href="#how-to-use-the-new-api" title="Permanent link">¶</a></h2>
+<h4 id="request-a-new-token">Request a new token<a class="headerlink" href="#request-a-new-token" title="Permanent link">¶</a></h4>
 <p>First you need to initialize the paymnet, to do that head over to this link:</p>
 <p><code>curl -H "content-type: application/json" -X POST https://api.soluspay.net/api/v1/payment_token</code></p>
-<h4 id="response">Response<a class="headerlink" href="#response" title="Permanent link">#</a></h4>
+<h4 id="response">Response<a class="headerlink" href="#response" title="Permanent link">¶</a></h4>
 <p>The response is in terms of UUID v4 data. It is secure, and don't collide</p>
-<pre><code class="json">{&quot;result&quot;:{&quot;id&quot;:&quot;dabceba4-2d23-41d9-9832-f4f005353ce0&quot;,&quot;uuid&quot;:&quot;dabceba4-2d23-41d9-9832-f4f005353ce0&quot;},&quot;uuid&quot;:&quot;dabceba4-2d23-41d9-9832-f4f005353ce0&quot;}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;result&quot;</span><span class="p">:{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;dabceba4-2d23-41d9-9832-f4f005353ce0&quot;</span><span class="p">,</span><span class="nt">&quot;uuid&quot;</span><span class="p">:</span><span class="s2">&quot;dabceba4-2d23-41d9-9832-f4f005353ce0&quot;</span><span class="p">},</span><span class="nt">&quot;uuid&quot;</span><span class="p">:</span><span class="s2">&quot;dabceba4-2d23-41d9-9832-f4f005353ce0&quot;</span><span class="p">}</span>
+</code></pre></div>
 
 <p><strong>For now, id is the same as uuid but we might change that in the future. So use uuid for future proof integration.</strong></p>
 <ul>
@@ -649,41 +662,41 @@
 <p>https://sahil.soluspay.net?id={tawasul_reference_id}&amp;amount={entered_amount}&amp;token={uuid}</p>
 <p>For example: http://sahil.soluspay.net/?id=123&amp;token=cf455236-69dd-410e-9996-c828d874d6d4&amp;amount=50</p>
 <p>This is the link you will be sharing in your mobile app or your website (iframe) to offer the payment ability.</p>
-<h2 id="timeouts">Timeouts<a class="headerlink" href="#timeouts" title="Permanent link">#</a></h2>
+<h2 id="timeouts">Timeouts<a class="headerlink" href="#timeouts" title="Permanent link">¶</a></h2>
 <ul>
 <li><strong>The uuid timeouts in 1 hr</strong></li>
 </ul>
-<h2 id="quering-result-api">Quering result API<a class="headerlink" href="#quering-result-api" title="Permanent link">#</a></h2>
+<h2 id="quering-result-api">Quering result API<a class="headerlink" href="#quering-result-api" title="Permanent link">¶</a></h2>
 <p>In case, you want to see the previous transactions, we offer a querying api.</p>
 <p>We need to use the original <code>uuid</code> (the one you inquired and sent through token param) and the biller id assigned to each biller to retrieve the status of a particular transaction.</p>
 <p><code>curl -H "content-type: application/json" -X POST https://api.soluspay.net/api/v1/info?id={token}&amp;biller={biller_id}</code></p>
-<h4 id="response_1">Response<a class="headerlink" href="#response_1" title="Permanent link">#</a></h4>
-<h5 id="successful-response">Successful response<a class="headerlink" href="#successful-response" title="Permanent link">#</a></h5>
-<pre><code class="json">{&quot;id&quot;: &quot;some_uuid_here&quot;, &quot;terminalId&quot;: &quot;18000377&quot;,&quot;systemTraceAuditNumber&quot;: 76,&quot;clientId&quot;: &quot;ACTS&quot;,&quot;responseMessage&quot;: &quot;Approval&quot;,&quot;responseStatus&quot;: &quot;Successful&quot;,&quot;responseCode&quot;: 0,&quot;tranDateTime&quot;: &quot;200419085611&quot;,&quot;tranFee&quot;: 1.5,&quot;additionalAmount&quot;: -1}
-</code></pre>
+<h4 id="response_1">Response<a class="headerlink" href="#response_1" title="Permanent link">¶</a></h4>
+<h5 id="successful-response">Successful response<a class="headerlink" href="#successful-response" title="Permanent link">¶</a></h5>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;some_uuid_here&quot;</span><span class="p">,</span> <span class="nt">&quot;terminalId&quot;</span><span class="p">:</span> <span class="s2">&quot;18000377&quot;</span><span class="p">,</span><span class="nt">&quot;systemTraceAuditNumber&quot;</span><span class="p">:</span> <span class="mi">76</span><span class="p">,</span><span class="nt">&quot;clientId&quot;</span><span class="p">:</span> <span class="s2">&quot;ACTS&quot;</span><span class="p">,</span><span class="nt">&quot;responseMessage&quot;</span><span class="p">:</span> <span class="s2">&quot;Approval&quot;</span><span class="p">,</span><span class="nt">&quot;responseStatus&quot;</span><span class="p">:</span> <span class="s2">&quot;Successful&quot;</span><span class="p">,</span><span class="nt">&quot;responseCode&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span><span class="nt">&quot;tranDateTime&quot;</span><span class="p">:</span> <span class="s2">&quot;200419085611&quot;</span><span class="p">,</span><span class="nt">&quot;tranFee&quot;</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">,</span><span class="nt">&quot;additionalAmount&quot;</span><span class="p">:</span> <span class="mi">-1</span><span class="p">}</span>
+</code></pre></div>
 
-<h5 id="failed-response">Failed response<a class="headerlink" href="#failed-response" title="Permanent link">#</a></h5>
+<h5 id="failed-response">Failed response<a class="headerlink" href="#failed-response" title="Permanent link">¶</a></h5>
 <p>Follows our standard </p>
-<pre><code class="json">{&quot;message&quot;: &quot;Descriptive message about the error&quot;, &quot;code&quot;: &quot;error_class&quot;}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Descriptive message about the error&quot;</span><span class="p">,</span> <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;error_class&quot;</span><span class="p">}</span>
+</code></pre></div>
 
 <p><strong>note, in this case, the biller ID for Sahil is: <code>biller:identifer_id</code>.</strong></p>
-<h2 id="cancel-transaction">Cancel transaction<a class="headerlink" href="#cancel-transaction" title="Permanent link">#</a></h2>
+<h2 id="cancel-transaction">Cancel transaction<a class="headerlink" href="#cancel-transaction" title="Permanent link">¶</a></h2>
 <p>You can also offer to your users Cancellation or do that automatically.
 We need to use the original <code>uuid</code> (the one you inquired and sent through token param) to cancel a particular transaction.</p>
-<pre><code class="json">curl -H &quot;content-type: application/json&quot; -X POST https://api.soluspay.net/api/v1/cancel?id={token}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="err">curl</span> <span class="mi">-</span><span class="err">H</span> <span class="s2">&quot;content-type: application/json&quot;</span> <span class="mi">-</span><span class="err">X</span> <span class="err">POST</span> <span class="err">h</span><span class="kc">tt</span><span class="err">ps</span><span class="p">:</span><span class="err">//api.soluspay.</span><span class="kc">net</span><span class="err">/api/v</span><span class="mi">1</span><span class="err">/ca</span><span class="kc">n</span><span class="err">cel?id=</span><span class="p">{</span><span class="kc">t</span><span class="err">oke</span><span class="kc">n</span><span class="p">}</span>
+</code></pre></div>
 
-<h4 id="response_2">Response<a class="headerlink" href="#response_2" title="Permanent link">#</a></h4>
+<h4 id="response_2">Response<a class="headerlink" href="#response_2" title="Permanent link">¶</a></h4>
 <p><strong>Always check for status codes</strong></p>
-<h5 id="successful-response_1">Successful response<a class="headerlink" href="#successful-response_1" title="Permanent link">#</a></h5>
-<pre><code class="json">{&quot;result&quot;: true}
-</code></pre>
+<h5 id="successful-response_1">Successful response<a class="headerlink" href="#successful-response_1" title="Permanent link">¶</a></h5>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">}</span>
+</code></pre></div>
 
-<h5 id="failed-response_1">Failed response<a class="headerlink" href="#failed-response_1" title="Permanent link">#</a></h5>
+<h5 id="failed-response_1">Failed response<a class="headerlink" href="#failed-response_1" title="Permanent link">¶</a></h5>
 <p>Follows our standard </p>
-<pre><code class="json">{&quot;message&quot;: &quot;Descriptive message about the error&quot;, &quot;code&quot;: &quot;error_class&quot;}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Descriptive message about the error&quot;</span><span class="p">,</span> <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;error_class&quot;</span><span class="p">}</span>
+</code></pre></div>
                 
               
               

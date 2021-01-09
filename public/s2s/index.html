@@ -441,18 +441,31 @@
 
 
 
+  <li class="md-nav__item">
+    <a href="../encryption/" class="md-nav__link">
+      Encryption
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+
   
   <li class="md-nav__item md-nav__item--nested">
     
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" >
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" >
     
-    <label class="md-nav__link" for="nav-5">
+    <label class="md-nav__link" for="nav-6">
       Our SDKs
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Our SDKs" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
+      <label class="md-nav__title" for="nav-6">
         <span class="md-nav__icon md-icon"></span>
         Our SDKs
       </label>
@@ -466,7 +479,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../java.md" class="md-nav__link">
+    <a href="../java/" class="md-nav__link">
       Java SDK
     </a>
   </li>
@@ -492,7 +505,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../flutter.sdk" class="md-nav__link">
+    <a href="../flutter.md" class="md-nav__link">
       Flutter / Dart SDK
     </a>
   </li>
@@ -740,7 +753,7 @@
                 
                   <h1>JSON API</h1>
                 
-                <h2 id="noebs-integrations">Noebs Integrations<a class="headerlink" href="#noebs-integrations" title="Permanent link">#</a></h2>
+                <h2 id="noebs-integrations">Noebs Integrations<a class="headerlink" href="#noebs-integrations" title="Permanent link">¶</a></h2>
 <p>Essentially we have three integrations mode:</p>
 <ul>
 <li>server to server (in case you have a backend system)</li>
@@ -748,23 +761,23 @@
 The client will use our SDK to integrate with our system (no encryption, easy to use, all error are handled by the sdk, etc)</li>
 <li>checkout page with Hooks: in the event you want to redirect the user to a checkout page designated for you. The simplest and most easiest form of integration. Hooks are used to integrate with your backend system to inform you about the transaction status. Or, you can use the dashboard to check the transaction status in case you don't have a backend system</li>
 </ul>
-<h2 id="server-to-server">Server to Server<a class="headerlink" href="#server-to-server" title="Permanent link">#</a></h2>
+<h2 id="server-to-server">Server to Server<a class="headerlink" href="#server-to-server" title="Permanent link">¶</a></h2>
 <ul>
 <li>You get to access our API endpoints directly</li>
 <li>JSON request / response</li>
 <li>IPIN calculations are done in your side</li>
 </ul>
 <p>Usually, server is more tailored and suitable when the client already have a backend system. The downside is the key management and encryption. </p>
-<h3 id="api-integration">API Integration<a class="headerlink" href="#api-integration" title="Permanent link">#</a></h3>
+<h3 id="api-integration">API Integration<a class="headerlink" href="#api-integration" title="Permanent link">¶</a></h3>
 <p>Noebs has two schemes for API integrations:
 -   HTTPS + RESTful APIs
 -   gRPC endpoints</p>
 <p>For the REST APIs, the request is the same as for EBS, with one variant in the request header (API-Key)</p>
 <p><code>Base URL: https://beta.soluspay.net</code></p>
-<h4 id="api-request-sample">API Request Sample<a class="headerlink" href="#api-request-sample" title="Permanent link">#</a></h4>
+<h4 id="api-request-sample">API Request Sample<a class="headerlink" href="#api-request-sample" title="Permanent link">¶</a></h4>
 <p><code>/api/v1/key</code></p>
 <p>Get public Key for encryption</p>
-<h3 id="request">Request<a class="headerlink" href="#request" title="Permanent link">#</a></h3>
+<h3 id="request">Request<a class="headerlink" href="#request" title="Permanent link">¶</a></h3>
 <table>
 <thead>
 <tr>
@@ -791,68 +804,68 @@ The client will use our SDK to integrate with our system (no encryption, easy to
 <li><code>tranDateTime</code> is time in ISO8601 format: YYMMDDHHmmss, for example 29/12/2020 T 11:11:00 is translated into: <code>201229111100</code>.</li>
 <li><code>UUID</code> is UUID v4.</li>
 </ul>
-<h3 id="request-sample">Request sample<a class="headerlink" href="#request-sample" title="Permanent link">#</a></h3>
-<pre><code class="json">{&quot;tranDateTime&quot;: &quot;200222113700&quot;,  &quot;applicationId&quot;: &quot;ACTSCon&quot;, &quot;UUID&quot;: &quot;4a6ef7c4-ddfa-42bb-b555-7971e955c01a&quot;}
-</code></pre>
+<h3 id="request-sample">Request sample<a class="headerlink" href="#request-sample" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;tranDateTime&quot;</span><span class="p">:</span> <span class="s2">&quot;200222113700&quot;</span><span class="p">,</span>  <span class="nt">&quot;applicationId&quot;</span><span class="p">:</span> <span class="s2">&quot;ACTSCon&quot;</span><span class="p">,</span> <span class="nt">&quot;UUID&quot;</span><span class="p">:</span> <span class="s2">&quot;4a6ef7c4-ddfa-42bb-b555-7971e955c01a&quot;</span><span class="p">}</span>
+</code></pre></div>
 
-<h2 id="responses">Responses<a class="headerlink" href="#responses" title="Permanent link">#</a></h2>
+<h2 id="responses">Responses<a class="headerlink" href="#responses" title="Permanent link">¶</a></h2>
 <ul>
 <li>400 (Bad Request)</li>
 </ul>
-<pre><code class="json">{
-    &quot;message&quot;: &quot;Request fields validation error&quot;,
-    &quot;code&quot;: 400,
-    &quot;status&quot;: &quot;BadRequest&quot;,
-    &quot;details&quot;: [
-        {
-            &quot;applicationId&quot;: &quot;this field is required&quot;
-        },
-        {
-            &quot;UUID&quot;: &quot;this field is required&quot;
-        }
-    ]
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Request fields validation error&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>
+    <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;BadRequest&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;details&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;applicationId&quot;</span><span class="p">:</span> <span class="s2">&quot;this field is required&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;UUID&quot;</span><span class="p">:</span> <span class="s2">&quot;this field is required&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <ul>
 <li>502 (EBS Errors)</li>
 </ul>
 <p>EBS specific Errors such as insufficient funds, destination errors, etc.</p>
-<pre><code class="json">{
-    &quot;message&quot;: &quot;EBSError&quot;,
-    &quot;code&quot;: 601,
-    &quot;status&quot;: &quot;EBSError&quot;,
-    &quot;details&quot;: {
-        &quot;UUID&quot;: &quot;4a6ef7c4-ddfa-42bb-b555-7971e955c01a&quot;,
-        &quot;responseMessage&quot;: &quot;INVALID_APPLICATION_ID&quot;,
-        &quot;responseStatus&quot;: &quot;Failed&quot;,
-        &quot;responseCode&quot;: 601,
-        &quot;tranDateTime&quot;: &quot;200222113700&quot;
-    }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;EBSError&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="mi">601</span><span class="p">,</span>
+    <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;EBSError&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;details&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;UUID&quot;</span><span class="p">:</span> <span class="s2">&quot;4a6ef7c4-ddfa-42bb-b555-7971e955c01a&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;responseMessage&quot;</span><span class="p">:</span> <span class="s2">&quot;INVALID_APPLICATION_ID&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;responseStatus&quot;</span><span class="p">:</span> <span class="s2">&quot;Failed&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;responseCode&quot;</span><span class="p">:</span> <span class="mi">601</span><span class="p">,</span>
+        <span class="nt">&quot;tranDateTime&quot;</span><span class="p">:</span> <span class="s2">&quot;200222113700&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <ul>
 <li>200 (Successful responses)</li>
 </ul>
-<pre><code class="json">{
-    &quot;ebs_response&quot;: {
-        &quot;pubKeyValue&quot;: &quot;MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBANx4gKYSMv3CrWWsxdPfxDxFvl+Is/0kc1dvMI1yNWDXI3AgdI4127KMUOv7gmwZ6SnRsHX/KAM0IPRe0+Sa0vMCAwEAAQ==&quot;,
-        &quot;UUID&quot;: &quot;4a6ef7c4-ddfa-42bb-b555-7971e955c01a&quot;,
-        &quot;responseMessage&quot;: &quot;Approved&quot;,
-        &quot;responseStatus&quot;: &quot;Successful&quot;,
-        &quot;responseCode&quot;: 0,
-        &quot;tranDateTime&quot;: &quot;200222113700&quot;
-    }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;ebs_response&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;pubKeyValue&quot;</span><span class="p">:</span> <span class="s2">&quot;MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBANx4gKYSMv3CrWWsxdPfxDxFvl+Is/0kc1dvMI1yNWDXI3AgdI4127KMUOv7gmwZ6SnRsHX/KAM0IPRe0+Sa0vMCAwEAAQ==&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;UUID&quot;</span><span class="p">:</span> <span class="s2">&quot;4a6ef7c4-ddfa-42bb-b555-7971e955c01a&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;responseMessage&quot;</span><span class="p">:</span> <span class="s2">&quot;Approved&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;responseStatus&quot;</span><span class="p">:</span> <span class="s2">&quot;Successful&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;responseCode&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="nt">&quot;tranDateTime&quot;</span><span class="p">:</span> <span class="s2">&quot;200222113700&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <p><strong>NOTE THAT OUR RESPONSE FOR FAILURE CASES ONLY VARIES FROM EBS IN <code>ebs_response</code> FIELD</strong>. The rest is fully compatible with EBS.</p>
-<h3 id="payment-request">Payment Request<a class="headerlink" href="#payment-request" title="Permanent link">#</a></h3>
+<h3 id="payment-request">Payment Request<a class="headerlink" href="#payment-request" title="Permanent link">¶</a></h3>
 <p>EBS uses the name Special Payment for online purchases.</p>
-<h3 id="ipin-encryption">IPIN Encryption<a class="headerlink" href="#ipin-encryption" title="Permanent link">#</a></h3>
+<h3 id="ipin-encryption">IPIN Encryption<a class="headerlink" href="#ipin-encryption" title="Permanent link">¶</a></h3>
 <p>You can use one of our existing encryption libraries to complete IPIN encryption. You can access it here: https://github.com/adonese/crypto</p>
-<h3 id="purchase-payment-api">Purchase / Payment API<a class="headerlink" href="#purchase-payment-api" title="Permanent link">#</a></h3>
+<h3 id="purchase-payment-api">Purchase / Payment API<a class="headerlink" href="#purchase-payment-api" title="Permanent link">¶</a></h3>
 <p>Endpoint: <code>api/v1/purchase</code>
 Headers:
 - <code>Content-Type: application/json</code>
@@ -908,59 +921,59 @@ Headers:
 <ul>
 <li><code>tranDateTime</code> is time in ISO8601 format: YYMMDDHHmmss, for example 29/12/2020 T 11:11:00 is translated into: <code>201229111100</code>.</li>
 </ul>
-<h3 id="responses_1">Responses<a class="headerlink" href="#responses_1" title="Permanent link">#</a></h3>
+<h3 id="responses_1">Responses<a class="headerlink" href="#responses_1" title="Permanent link">¶</a></h3>
 <p>Same as for key responses.</p>
 <ul>
 <li>400 (Bad Request)</li>
 </ul>
-<pre><code class="json">{
-    &quot;message&quot;: &quot;Request fields validation error&quot;,
-    &quot;code&quot;: 400,
-    &quot;status&quot;: &quot;BadRequest&quot;,
-    &quot;details&quot;: [
-        {
-            &quot;applicationId&quot;: &quot;this field is required&quot;
-        },
-        {
-            &quot;UUID&quot;: &quot;this field is required&quot;
-        }
-    ]
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Request fields validation error&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>
+    <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;BadRequest&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;details&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;applicationId&quot;</span><span class="p">:</span> <span class="s2">&quot;this field is required&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;UUID&quot;</span><span class="p">:</span> <span class="s2">&quot;this field is required&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <ul>
 <li>502 (EBS Errors)</li>
 </ul>
 <p>EBS specific Errors such as insufficient funds, destination errors, etc.</p>
-<pre><code class="json">{
-    &quot;message&quot;: &quot;EBSError&quot;,
-    &quot;code&quot;: 601,
-    &quot;status&quot;: &quot;EBSError&quot;,
-    &quot;details&quot;: {
-        &quot;UUID&quot;: &quot;4a6ef7c4-ddfa-42bb-b555-7971e955c01a&quot;,
-        &quot;responseMessage&quot;: &quot;INVALID_APPLICATION_ID&quot;,
-        &quot;responseStatus&quot;: &quot;Failed&quot;,
-        &quot;responseCode&quot;: 601,
-        &quot;tranDateTime&quot;: &quot;200222113700&quot;
-    }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;EBSError&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="mi">601</span><span class="p">,</span>
+    <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;EBSError&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;details&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;UUID&quot;</span><span class="p">:</span> <span class="s2">&quot;4a6ef7c4-ddfa-42bb-b555-7971e955c01a&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;responseMessage&quot;</span><span class="p">:</span> <span class="s2">&quot;INVALID_APPLICATION_ID&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;responseStatus&quot;</span><span class="p">:</span> <span class="s2">&quot;Failed&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;responseCode&quot;</span><span class="p">:</span> <span class="mi">601</span><span class="p">,</span>
+        <span class="nt">&quot;tranDateTime&quot;</span><span class="p">:</span> <span class="s2">&quot;200222113700&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <ul>
 <li>200 (Successful responses)</li>
 </ul>
-<pre><code class="json">{
-    &quot;ebs_response&quot;: {
-        &quot;UUID&quot;: &quot;4a6ef7c4-ddfa-42bb-b555-7971e955c01a&quot;,
-        &quot;responseMessage&quot;: &quot;Approved&quot;,
-        &quot;responseStatus&quot;: &quot;Successful&quot;,
-        &quot;responseCode&quot;: 0,
-        &quot;tranDateTime&quot;: &quot;200222113700&quot;
-    }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;ebs_response&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;UUID&quot;</span><span class="p">:</span> <span class="s2">&quot;4a6ef7c4-ddfa-42bb-b555-7971e955c01a&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;responseMessage&quot;</span><span class="p">:</span> <span class="s2">&quot;Approved&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;responseStatus&quot;</span><span class="p">:</span> <span class="s2">&quot;Successful&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;responseCode&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="nt">&quot;tranDateTime&quot;</span><span class="p">:</span> <span class="s2">&quot;200222113700&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 
-<h3 id="bill-payment">Bill Payment<a class="headerlink" href="#bill-payment" title="Permanent link">#</a></h3>
+<h3 id="bill-payment">Bill Payment<a class="headerlink" href="#bill-payment" title="Permanent link">¶</a></h3>
 <p>(This includes: E15, Top Ups, and Electricity).</p>
 <p>Endpoint: <code>api/v1/bill_payment</code>
 Headers:
@@ -1018,7 +1031,7 @@ Headers:
 </table>
 <p><em>payeeId is a unique identifier for Zain, MTN, Sudani, E15, and other billers
 </em>* paymentInfo is specific for the payeeId: for Zain, it is a zain mobile number, for electricity it is the electricity bill number, and so on. We might need to add </p>
-<h4 id="list-of-payeeid-paymentinfo">List of payeeId / paymentInfo<a class="headerlink" href="#list-of-payeeid-paymentinfo" title="Permanent link">#</a></h4>
+<h4 id="list-of-payeeid-paymentinfo">List of payeeId / paymentInfo<a class="headerlink" href="#list-of-payeeid-paymentinfo" title="Permanent link">¶</a></h4>
 <table>
 <thead>
 <tr>
@@ -1055,7 +1068,7 @@ Headers:
 </tr>
 </tbody>
 </table>
-<h4 id="list-of-all-noebs-billers">List of all noebs billers<a class="headerlink" href="#list-of-all-noebs-billers" title="Permanent link">#</a></h4>
+<h4 id="list-of-all-noebs-billers">List of all noebs billers<a class="headerlink" href="#list-of-all-noebs-billers" title="Permanent link">¶</a></h4>
 <table>
 <thead>
 <tr>
@@ -1157,25 +1170,25 @@ Headers:
 </tr>
 </tbody>
 </table>
-<h4 id="how-to-handle-e15-bill-payment-bill-inquiry">How to handle E15 bill payment / bill inquiry<a class="headerlink" href="#how-to-handle-e15-bill-payment-bill-inquiry" title="Permanent link">#</a></h4>
+<h4 id="how-to-handle-e15-bill-payment-bill-inquiry">How to handle E15 bill payment / bill inquiry<a class="headerlink" href="#how-to-handle-e15-bill-payment-bill-inquiry" title="Permanent link">¶</a></h4>
 <p>E15 has two modes for <code>paymentInfo</code>, in case of inquiry and for payment.</p>
 <p>For inquiry, the <code>paymentInfo</code> field is like the following:</p>
-<pre><code class="diff">1,2c1,2
+<div class="highlight"><pre><span></span><code>1,2c1,2
 &lt; Payment
 &lt; SERVICEID=6/INVOICENUMBER=196222720005633673/PHONENUMBER=0912141679
----
+<span class="gd">---</span>
 &gt; Inquiry
 &gt; SERVICEID=2/INVOICENUMBER=196222720005633673/PHONENUMBER=0912141679
-</code></pre>
+</code></pre></div>
 
-<h4 id="response">Response<a class="headerlink" href="#response" title="Permanent link">#</a></h4>
+<h4 id="response">Response<a class="headerlink" href="#response" title="Permanent link">¶</a></h4>
 <p>(Same as for the previous)</p>
-<h4 id="card-to-card-transfer">Card to Card Transfer<a class="headerlink" href="#card-to-card-transfer" title="Permanent link">#</a></h4>
+<h4 id="card-to-card-transfer">Card to Card Transfer<a class="headerlink" href="#card-to-card-transfer" title="Permanent link">¶</a></h4>
 <p>Endpoint: <code>api/v1/p2p</code>
 Headers:
 - <code>Content-Type: application/json</code>
 - <code>API-Key</code> Reserved for future</p>
-<h4 id="request-fields">Request fields<a class="headerlink" href="#request-fields" title="Permanent link">#</a></h4>
+<h4 id="request-fields">Request fields<a class="headerlink" href="#request-fields" title="Permanent link">¶</a></h4>
 <table>
 <thead>
 <tr>
@@ -1226,9 +1239,9 @@ Headers:
 <li>toCard is the destination</li>
 </ul>
 <p>This api also supports mobile number in future versions.</p>
-<h2 id="grpc-integration">gRPC integration<a class="headerlink" href="#grpc-integration" title="Permanent link">#</a></h2>
+<h2 id="grpc-integration">gRPC integration<a class="headerlink" href="#grpc-integration" title="Permanent link">¶</a></h2>
 <p>We also have gRPC integrations. Contact us support@noebs.dev if you are interested in integration with gRPC.</p>
-<h3 id="sdk-integration">SDK integration<a class="headerlink" href="#sdk-integration" title="Permanent link">#</a></h3>
+<h3 id="sdk-integration">SDK integration<a class="headerlink" href="#sdk-integration" title="Permanent link">¶</a></h3>
 <p>Currently we provide SDKs for: Java, and JavaScript.</p>
 <p>You can get Java SDK from <a href="https://github.com/noebs/sdk">our open source SDK</a>.</p>
                 
@@ -1263,6 +1276,20 @@ Headers:
             </div>
           </a>
         
+        
+          <a href="../encryption/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Encryption
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
         
       </nav>
     </div>
