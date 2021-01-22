@@ -11,8 +11,10 @@ markdown_extensions:
 
 theme:
   name: material
-  logo: assets/logo.png
+  logo: assets/logo2.png
   favicon: assets/favicon.ico
+  # custom_dir: overrides
+
 nav:
   - index.md
   - Using Special Payment: biller_system.md

@@ -10,7 +10,7 @@
       
       
       <link rel="shortcut icon" href="../assets/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.4">
     
     
       
@@ -18,10 +18,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.3b61ea93.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.15aa0b43.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.39b8e14a.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.75751829.min.css">
         
       
     
@@ -73,7 +73,7 @@
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href=".." title="Noebs APIs" class="md-header-nav__button md-logo" aria-label="Noebs APIs">
       
-  <img src="../assets/logo.png" alt="logo">
+  <img src="../assets/logo2.png" alt="logo">
 
     </a>
     <label class="md-header-nav__button md-icon" for="__drawer">
@@ -165,7 +165,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="Noebs APIs" class="md-nav__button md-logo" aria-label="Noebs APIs">
       
-  <img src="../assets/logo.png" alt="logo">
+  <img src="../assets/logo2.png" alt="logo">
 
     </a>
     Noebs APIs
@@ -252,7 +252,47 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#registration-service" class="md-nav__link">
+    Registration service
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request" class="md-nav__link">
+    Request
+  </a>
+  
+    <nav class="md-nav" aria-label="Request">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#response" class="md-nav__link">
+    Response
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#todo" class="md-nav__link">
+    TODO
+  </a>
+  
+    <nav class="md-nav" aria-label="TODO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#response_1" class="md-nav__link">
     Response
   </a>
   
@@ -279,7 +319,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#response_1" class="md-nav__link">
+  <a href="#response_2" class="md-nav__link">
     Response
   </a>
   
@@ -319,7 +359,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#response_2" class="md-nav__link">
+  <a href="#response_3" class="md-nav__link">
     Response
   </a>
   
@@ -530,7 +570,47 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#registration-service" class="md-nav__link">
+    Registration service
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request" class="md-nav__link">
+    Request
+  </a>
+  
+    <nav class="md-nav" aria-label="Request">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#response" class="md-nav__link">
+    Response
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#todo" class="md-nav__link">
+    TODO
+  </a>
+  
+    <nav class="md-nav" aria-label="TODO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#response_1" class="md-nav__link">
     Response
   </a>
   
@@ -557,7 +637,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#response_1" class="md-nav__link">
+  <a href="#response_2" class="md-nav__link">
     Response
   </a>
   
@@ -597,7 +677,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#response_2" class="md-nav__link">
+  <a href="#response_3" class="md-nav__link">
     Response
   </a>
   
@@ -648,9 +728,90 @@
                 <h1 id="how-to-use-solus-biller-system">How to use Solus Biller System<a class="headerlink" href="#how-to-use-solus-biller-system" title="Permanent link">¶</a></h1>
 <h2 id="how-to-use-the-new-api">How to use the new API<a class="headerlink" href="#how-to-use-the-new-api" title="Permanent link">¶</a></h2>
 <h4 id="request-a-new-token">Request a new token<a class="headerlink" href="#request-a-new-token" title="Permanent link">¶</a></h4>
-<p>First you need to initialize the paymnet, to do that head over to this link:</p>
-<p><code>curl -H "content-type: application/json" -X POST https://api.soluspay.net/api/v1/payment_token</code></p>
+<h3 id="registration-service">Registration service<a class="headerlink" href="#registration-service" title="Permanent link">¶</a></h3>
+<p>API: /new</p>
+<p>You can register for a new noebs merchant service on https://beta.soluspay.net/api/v1/merchant/new. The step can be done too via Cashq Merchant App https://play.google.com/store/apps/details?id=net.soluspay.CashQMerchant, to simplify the registration process.</p>
+<h3 id="request">Request<a class="headerlink" href="#request" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="err">&#39;</span><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;adonese&quot;</span><span class="p">,</span> <span class="nt">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;kosti&quot;</span><span class="p">,</span> <span class="nt">&quot;id_type&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nt">&quot;id_no&quot;</span><span class="p">:</span> <span class="s2">&quot;1213456&quot;</span><span class="p">,</span> <span class="nt">&quot;mobileNo&quot;</span><span class="p">:</span> <span class="s2">&quot;0912141671&quot;</span><span class="p">,</span> <span class="nt">&quot;push_id&quot;</span><span class="p">:</span> <span class="s2">&quot;device-uuid-code&quot;</span><span class="p">,</span> <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;1214&quot;</span><span class="p">,</span> <span class="nt">&quot;mobile&quot;</span><span class="p">:</span> <span class="s2">&quot;0912141679&quot;</span><span class="p">,</span><span class="nt">&quot;merchant_id&quot;</span><span class="p">:</span> <span class="s2">&quot;assasd&quot;</span><span class="p">}</span><span class="err">&#39;</span>
+</code></pre></div>
+
+<table>
+<thead>
+<tr>
+<th>field</th>
+<th>type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+</tr>
+<tr>
+<td>city</td>
+<td>string</td>
+</tr>
+<tr>
+<td>id_type</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>mobileNo</td>
+<td>string</td>
+</tr>
+<tr>
+<td>password</td>
+<td>string</td>
+</tr>
+<tr>
+<td>merchant_id</td>
+<td>string</td>
+</tr>
+<tr>
+<td>push_id</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
 <h4 id="response">Response<a class="headerlink" href="#response" title="Permanent link">¶</a></h4>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;biller_name&quot;</span><span class="p">:</span><span class="s2">&quot;romantic_jang&quot;</span><span class="p">,</span><span class="nt">&quot;profile&quot;</span><span class="p">:{</span><span class="nt">&quot;merchant_id&quot;</span><span class="p">:</span><span class="s2">&quot;romantic_jang&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;adonese&quot;</span><span class="p">,</span><span class="nt">&quot;city&quot;</span><span class="p">:</span><span class="s2">&quot;kosti&quot;</span><span class="p">,</span><span class="nt">&quot;mobile&quot;</span><span class="p">:</span><span class="s2">&quot;0912141679&quot;</span><span class="p">,</span><span class="nt">&quot;id_type&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id_no&quot;</span><span class="p">:</span><span class="s2">&quot;1213456&quot;</span><span class="p">,</span><span class="nt">&quot;push_id&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="s2">&quot;$2a$08$VHTQqbN.U7aZGjjELxXNyeV0Okwjj267VMa.t4keHPoUKsGjDKnsO&quot;</span><span class="p">,</span><span class="nt">&quot;is_verified&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&quot;biller_id&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">},</span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="s2">&quot;ok&quot;</span><span class="p">,</span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="s2">&quot;https://beta.soluspay.net/api/v1/payment/romantic_jang&quot;</span><span class="p">}</span>
+</code></pre></div>
+
+<ul>
+<li><code>url</code>: is needed in subsequent requests. <code>url</code> can be used in Cashq Merchant app to accept payment.</li>
+<li><code>is_verified</code>: is by default false until our team verifies entered data.</li>
+<li><code>biller_name</code>: must be stored safely as it will be a unique id assigned to the specific biller.</li>
+</ul>
+<h2 id="todo">TODO<a class="headerlink" href="#todo" title="Permanent link">¶</a></h2>
+<p>assumption: merchant_id is autogenerated name
+store autogenerated name in sql
+store autogenerated name in redis</p>
+<ul>
+<li>
+<p>in payment (payment_token, and payment/:payment_id):</p>
+</li>
+<li>
+<p>[x] namespace is merchant_id</p>
+</li>
+<li>[o] get table from sql</li>
+<li>[o] get is_verified from sql</li>
+<li>[o] get biller_id from sql</li>
+<li>authorize transactions per biller</li>
+<li>assign transactions to the biller</li>
+<li>get transactions from the biller</li>
+<li>get specific transaction using uuid <code>token</code></li>
+<li>delete biller</li>
+<li>update biller info</li>
+<li>update biller ebs id</li>
+<li>get biller_id <code>serviceProviderId</code> from store</li>
+</ul>
+<p>responds accordingly</p>
+<p>First you need to initialize the paymnet, to do that head over to this link:</p>
+<div class="highlight"><pre><span></span><code>curl -H <span class="s2">&quot;content-type: application/json&quot;</span> -X POST https://api.soluspay.net/api/v1/payment_token/<span class="nv">$biller_id</span>
+</code></pre></div>
+
+<p>** <code>biller_id</code>: a biller id assigned to specific biller by noebs.</p>
+<h4 id="response_1">Response<a class="headerlink" href="#response_1" title="Permanent link">¶</a></h4>
 <p>The response is in terms of UUID v4 data. It is secure, and don't collide</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;result&quot;</span><span class="p">:{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;dabceba4-2d23-41d9-9832-f4f005353ce0&quot;</span><span class="p">,</span><span class="nt">&quot;uuid&quot;</span><span class="p">:</span><span class="s2">&quot;dabceba4-2d23-41d9-9832-f4f005353ce0&quot;</span><span class="p">},</span><span class="nt">&quot;uuid&quot;</span><span class="p">:</span><span class="s2">&quot;dabceba4-2d23-41d9-9832-f4f005353ce0&quot;</span><span class="p">}</span>
 </code></pre></div>
@@ -670,7 +831,7 @@
 <p>In case, you want to see the previous transactions, we offer a querying api.</p>
 <p>We need to use the original <code>uuid</code> (the one you inquired and sent through token param) and the biller id assigned to each biller to retrieve the status of a particular transaction.</p>
 <p><code>curl -H "content-type: application/json" -X POST https://api.soluspay.net/api/v1/info?id={token}&amp;biller={biller_id}</code></p>
-<h4 id="response_1">Response<a class="headerlink" href="#response_1" title="Permanent link">¶</a></h4>
+<h4 id="response_2">Response<a class="headerlink" href="#response_2" title="Permanent link">¶</a></h4>
 <h5 id="successful-response">Successful response<a class="headerlink" href="#successful-response" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;some_uuid_here&quot;</span><span class="p">,</span> <span class="nt">&quot;terminalId&quot;</span><span class="p">:</span> <span class="s2">&quot;18000377&quot;</span><span class="p">,</span><span class="nt">&quot;systemTraceAuditNumber&quot;</span><span class="p">:</span> <span class="mi">76</span><span class="p">,</span><span class="nt">&quot;clientId&quot;</span><span class="p">:</span> <span class="s2">&quot;ACTS&quot;</span><span class="p">,</span><span class="nt">&quot;responseMessage&quot;</span><span class="p">:</span> <span class="s2">&quot;Approval&quot;</span><span class="p">,</span><span class="nt">&quot;responseStatus&quot;</span><span class="p">:</span> <span class="s2">&quot;Successful&quot;</span><span class="p">,</span><span class="nt">&quot;responseCode&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span><span class="nt">&quot;tranDateTime&quot;</span><span class="p">:</span> <span class="s2">&quot;200419085611&quot;</span><span class="p">,</span><span class="nt">&quot;tranFee&quot;</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">,</span><span class="nt">&quot;additionalAmount&quot;</span><span class="p">:</span> <span class="mi">-1</span><span class="p">}</span>
 </code></pre></div>
@@ -687,7 +848,7 @@ We need to use the original <code>uuid</code> (the one you inquired and sent thr
 <div class="highlight"><pre><span></span><code><span class="err">curl</span> <span class="mi">-</span><span class="err">H</span> <span class="s2">&quot;content-type: application/json&quot;</span> <span class="mi">-</span><span class="err">X</span> <span class="err">POST</span> <span class="err">h</span><span class="kc">tt</span><span class="err">ps</span><span class="p">:</span><span class="err">//api.soluspay.</span><span class="kc">net</span><span class="err">/api/v</span><span class="mi">1</span><span class="err">/ca</span><span class="kc">n</span><span class="err">cel?id=</span><span class="p">{</span><span class="kc">t</span><span class="err">oke</span><span class="kc">n</span><span class="p">}</span>
 </code></pre></div>
 
-<h4 id="response_2">Response<a class="headerlink" href="#response_2" title="Permanent link">¶</a></h4>
+<h4 id="response_3">Response<a class="headerlink" href="#response_3" title="Permanent link">¶</a></h4>
 <p><strong>Always check for status codes</strong></p>
 <h5 id="successful-response_1">Successful response<a class="headerlink" href="#successful-response_1" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">}</span>
@@ -763,8 +924,8 @@ We need to use the original <code>uuid</code> (the one you inquired and sent thr
       
     </div>
     
-      <script src="../assets/javascripts/vendor.08c56446.min.js"></script>
-      <script src="../assets/javascripts/bundle.6ced434e.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../assets/javascripts/vendor.93c04032.min.js"></script>
+      <script src="../assets/javascripts/bundle.83e5331e.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
