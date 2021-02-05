@@ -23,3 +23,36 @@ Fields:
 | hooks | hooks endpoint, to send the response message to the system |
 
 `token`: is requested from ebs before hand, by calling: PAYMENT_URL/payment_token/:biller_id
+
+
+### payment token
+
+Endpoint: `https://beta.soluspay.net/api/v1/payment_token/:biller_id`
+
+The request only have `biller_id` as a named url query. `biller_id` is noebs specific biller's name. The response would be like this:
+
+```json
+{"result":{"id":"dabceba4-2d23-41d9-9832-f4f005353ce0","uuid":"dabceba4-2d23-41d9-9832-f4f005353ce0"}
+```
+
+_NOTE THAT `id` and `uuid` are the same._
+
+**id will be used later as token**
+
+### How the payment scenario works
+
+- User enters to Sara website
+- User add items to cart
+- User proceed to checkout
+- Sara's website performs generate `payment_token` api
+- Sara's website parse the corresponding `uuid` from `payment_token`
+- **uuid** will be used by Sara as `token`
+- Sara can generate the payment token on events like windows.load, or make a dedicated button for that.
+- Sara website then will have the sufficient information to complete the payment:
+    - payment `token`
+    - `amount`
+    - `id` (if she has an id for their cart, or 0 for default value)
+    - `hooks` (if she want to use noebs webhooks to update her cart system)
+
+
+Reach out for any help or support. We will publish more examples soon!
