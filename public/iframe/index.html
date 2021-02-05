@@ -520,15 +520,21 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p><code>token</code>: is requested from ebs before hand, by calling: PAYMENT_URL/payment_token/:biller_id</p>
+</div>
 <h3 id="payment-token">payment token<a class="headerlink" href="#payment-token" title="Permanent link">¶</a></h3>
 <p>Endpoint: <code>https://beta.soluspay.net/api/v1/payment_token/:biller_id</code></p>
 <p>The request only have <code>biller_id</code> as a named url query. <code>biller_id</code> is noebs specific biller's name. The response would be like this:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;result&quot;</span><span class="p">:{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;dabceba4-2d23-41d9-9832-f4f005353ce0&quot;</span><span class="p">,</span><span class="nt">&quot;uuid&quot;</span><span class="p">:</span><span class="s2">&quot;dabceba4-2d23-41d9-9832-f4f005353ce0&quot;</span><span class="p">}</span>
 </code></pre></div>
 
-<p><em>NOTE THAT <code>id</code> and <code>uuid</code> are the same.</em></p>
-<p><strong>id will be used later as token</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>id</code> and <code>uuid</code> are the same. We recommend you to use <code>uuid</code> instead, just for the explicitness.</p>
+</div>
+<p><strong><code>id</code> will be used later as <code>token</code></strong></p>
 <h3 id="how-the-payment-scenario-works">How the payment scenario works<a class="headerlink" href="#how-the-payment-scenario-works" title="Permanent link">¶</a></h3>
 <ul>
 <li>User enters to Sara website</li>
@@ -536,7 +542,7 @@
 <li>User proceed to checkout</li>
 <li>Sara's website performs generate <code>payment_token</code> api</li>
 <li>Sara's website parse the corresponding <code>uuid</code> from <code>payment_token</code></li>
-<li><strong>uuid</strong> will be used by Sara as <code>token</code></li>
+<li><strong><code>uuid</code></strong> will be used by Sara as <strong><code>token</code></strong></li>
 <li>Sara can generate the payment token on events like windows.load, or make a dedicated button for that.</li>
 <li>Sara website then will have the sufficient information to complete the payment:<ul>
 <li>payment <code>token</code></li>

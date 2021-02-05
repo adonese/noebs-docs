@@ -8,6 +8,8 @@ markdown_extensions:
   - toc:
      permalink: ¶
   - meta
+  - pymdownx.snippets
+  - admonition
 
 
 theme:
