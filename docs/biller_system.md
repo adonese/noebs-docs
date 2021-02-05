@@ -1,5 +1,6 @@
-# How to use Solus Biller System
+# How to use noebs Biller System
 
+Noebs offers a simple and secure way to accept payments, through our billers system. Merchants can leverage our system to accept payments 
 
 ## How to use the new API
 
@@ -12,11 +13,12 @@ API: /new
 
 You can register for a new noebs merchant service on https://beta.soluspay.net/api/v1/merchant/new. The step can be done too via Cashq Merchant App https://play.google.com/store/apps/details?id=net.soluspay.CashQMerchant, to simplify the registration process.
 
+
 ### Request
 
 
 ```json
-'{"name": "adonese", "city": "kosti", "id_type": 1, "id_no": "1213456", "mobileNo": "0912141671", "push_id": "device-uuid-code", "password": "1214", "mobile": "0912141679","merchant_id": "assasd"}'
+'{"name": "adonese", "city": "kosti", "id_type": 1, "id_no": "1213456",  "password": "1214", "mobile": "0912141679","merchant_id": "assasd"}'
 ```
 
 | field | type |
