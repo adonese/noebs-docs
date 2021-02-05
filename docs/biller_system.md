@@ -1,3 +1,9 @@
+---
+title: iFrame integration with noebs
+description: noebs includes simple integration via an iFrame with hooks integration. iframe can drastically cuts integration time and only require the app developer to redirect the user to our checkout page.
+---
+
+
 # How to use noebs Biller System
 
 Noebs offers a simple and secure way to accept payments, through our billers system. Merchants can leverage our system to accept payments 
