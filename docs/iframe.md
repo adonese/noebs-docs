@@ -22,7 +22,7 @@ Fields:
 | url | url to be redirect the user to, after the payment is completed |
 | hooks | hooks endpoint, to send the response message to the system |
 
-!!! Note
+!!! important
     `token`: is requested from ebs before hand, by calling: PAYMENT_URL/payment_token/:biller_id
 
 
