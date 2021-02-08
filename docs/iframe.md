@@ -1,5 +1,9 @@
 ## iFrame and web integrations in noebs
 
+
+
+
+- Start the process by creating a new account via: [Via our online onboarding portal](https://new.cashq.app)
 - Contact noebs team for account creations [mailto:adonese@noebs.dev](mailto:adonese@noebs.dev)
 - The team will go with you through simple integration steps, to comply with KYC
     - in the future it will be about sending us a selfie of you + ID cards
@@ -23,7 +27,7 @@ Fields:
 | hooks | hooks endpoint, to send the response message to the system |
 
 !!! important
-    `token`: is requested from ebs before hand, by calling: PAYMENT_URL/payment_token/:biller_id
+    `token`: is requested from noebs beforehand, by calling: PAYMENT_URL/payment_token/:biller_id
 
 
 ### payment token
@@ -58,4 +62,6 @@ The request only have `biller_id` as a named url query. `biller_id` is noebs spe
     - `hooks` (if she want to use noebs webhooks to update her cart system)
 
 
-Reach out for any help or support. We will publish more examples soon!
+Reach out for any help or support. We will publish more examples soon! 
+
+[Sign up as a merchant and start accepting funds](https://new.cashq.app){: .md-button .md-button--primary}

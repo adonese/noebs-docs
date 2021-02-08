@@ -10,8 +10,18 @@ markdown_extensions:
   - meta
   - pymdownx.snippets
   - admonition
+  - attr_list
 
+extra:
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/noebs
+    - icon: fontawesome/brands/facebook
+      link: https://facebook.com/noebs
+    - icon: fontawesome/brands/github
+      link: https://github.com/noebs
 
+copyright: Copyright &copy; 2018 - 2021 Mohamed Yousif & Co
 theme:
   name: material
   logo: assets/logo2.png
