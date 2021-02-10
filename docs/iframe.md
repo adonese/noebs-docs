@@ -15,7 +15,7 @@
 
 Our payment checkout is hosted at: [https://pay.cashq.app](pay.cashq.app). The URL for payment will be like this:
 
-`https://pay.cashq.app/:biller_id?id=merchant_defined_id&token=noebs_payment_uuid_token&to=redirect_url_after_payment&hooks=hooks_endpoint_for_post_payment`
+`https://pay.cashq.app/?biller=biller_id?id=merchant_defined_id&token=noebs_payment_uuid_token&to=redirect_url_after_payment&hooks=hooks_endpoint_for_post_payment`
 
 Fields:
 
