@@ -1,8 +1,5 @@
 ## iFrame and web integrations in noebs
 
-
-
-
 - Start the process by creating a new account via: [Via our online onboarding portal](https://new.cashq.app)
 - Contact noebs team for account creations [mailto:adonese@noebs.dev](mailto:adonese@noebs.dev)
 - The team will go with you through simple integration steps, to comply with KYC
@@ -60,6 +57,14 @@ The request only have `biller_id` as a named url query. `biller_id` is noebs spe
     - `amount`
     - `id` (if she has an id for their cart, or 0 for default value)
     - `hooks` (if she want to use noebs webhooks to update her cart system)
+
+
+### Get billers transactions
+
+Endpoint: `HOST_URL`/v1/merchant/i?biller=:biller_id
+
+!!! Note
+    `biller_id`: is the assigned noebs biller for the particular merchant
 
 
 Reach out for any help or support. We will publish more examples soon! 
