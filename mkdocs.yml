@@ -40,3 +40,4 @@ nav:
     - Flutter / Dart SDK: flutter.md
     - Go SDK: go.sdk
   - POS / Kiosks: pos.md
+  - Cashouts and rewards points: cashout.md
