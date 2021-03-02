@@ -576,6 +576,20 @@
                 
                 <h2 id="cash-out-api">Cash out api<a class="headerlink" href="#cash-out-api" title="Permanent link">¶</a></h2>
 <p>Cash out service by customers to transfer reward points and loyalty into an actual cash.</p>
+<p>A simple walkthrough for this feature will look like this:</p>
+<ul>
+<li>customer will request a cashout (in <em>your</em> app)</li>
+<li>you validate the request and send us a cashout request (including amount and id specific to you)</li>
+<li>we send you a url to conduct this payment. </li>
+<li>you return the url to <em>your customer</em> (as a button in the app)</li>
+<li>your customer clicks on the url and enters their info</li>
+<li>we check the request, and if it works, we run the payment request in the background</li>
+<li>the webpage will be done here for</li>
+<li>upon payment completion:<ul>
+<li>we send you a json response regarding the payment (status, amount, etc)</li>
+</ul>
+</li>
+</ul>
 <h2 id="how-it-works">How it works<a class="headerlink" href="#how-it-works" title="Permanent link">¶</a></h2>
 <p>In rewards system, a user usually would want to cash out their rewards. The equivalent of an actual cash is left for the store owner to decide. But, it simply means: transfer this <code>X</code> points into <code>Y</code> cash, from <code>A</code> card to the user's card <code>B</code>.</p>
 <h3 id="api">API<a class="headerlink" href="#api" title="Permanent link">¶</a></h3>

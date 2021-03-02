@@ -4,6 +4,18 @@
 Cash out service by customers to transfer reward points and loyalty into an actual cash.
 
 
+A simple walkthrough for this feature will look like this:
+
+- customer will request a cashout (in *your* app)
+- you validate the request and send us a cashout request (including amount and id specific to you)
+- we send you a url to conduct this payment. 
+- you return the url to *your customer* (as a button in the app)
+- your customer clicks on the url and enters their info
+- we check the request, and if it works, we run the payment request in the background
+- the webpage will be done here for
+- upon payment completion:
+    - we send you a json response regarding the payment (status, amount, etc)
+
 ## How it works
 
 In rewards system, a user usually would want to cash out their rewards. The equivalent of an actual cash is left for the store owner to decide. But, it simply means: transfer this `X` points into `Y` cash, from `A` card to the user's card `B`.
