@@ -99,6 +99,33 @@ Response
     result: uuid result will be used later to build the url
     uuid: uuid response
 
+
+## Web hooks integrations
+
+Noebs cashout supports webhooks, actually for the time being we mandate the use of webhooks. Webhooks allow us to work as a mediator between noebs and our payment providers and as a result it can play greatly in scenarios where a system needs to make an update according to our actions.
+
+The request for the web hooks transaction is:
+
+```json
+{"name":"shifa","details":{"response":"Generic Error","code":69,"time":"0001-01-01T00:00:00Z","amount":0}}
+```
+`name`: is the cashout provder name
+
+!!! NOTE
+  This is the request we send in our noebs webhooks.
+
+
+Details is the interesting part
+
+| field | type |
+| ------|------|
+| response | string |
+| code | integer|
+| time | time |
+| amount | integer |
+
+These tells the status of each transactions.
+
 ### Last step
 
 The cashout provider will use the newly generated uuid to build the cashout page for their customers.

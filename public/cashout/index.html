@@ -440,6 +440,19 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-hooks-integrations" class="md-nav__link">
+    Web hooks integrations
+  </a>
+  
+    <nav class="md-nav" aria-label="Web hooks integrations">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
   <a href="#last-step" class="md-nav__link">
     Last step
@@ -542,6 +555,19 @@
     </nav>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-hooks-integrations" class="md-nav__link">
+    Web hooks integrations
+  </a>
+  
+    <nav class="md-nav" aria-label="Web hooks integrations">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#last-step" class="md-nav__link">
@@ -687,6 +713,44 @@ id: provider specific id for the transaction (to be used by the provider to trac
 <p>result: uuid result will be used later to build the url
 uuid: uuid response</p>
 </div>
+<h2 id="web-hooks-integrations">Web hooks integrations<a class="headerlink" href="#web-hooks-integrations" title="Permanent link">¶</a></h2>
+<p>Noebs cashout supports webhooks, actually for the time being we mandate the use of webhooks. Webhooks allow us to work as a mediator between noebs and our payment providers and as a result it can play greatly in scenarios where a system needs to make an update according to our actions.</p>
+<p>The request for the web hooks transaction is:</p>
+<p><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;shifa&quot;</span><span class="p">,</span><span class="nt">&quot;details&quot;</span><span class="p">:{</span><span class="nt">&quot;response&quot;</span><span class="p">:</span><span class="s2">&quot;Generic Error&quot;</span><span class="p">,</span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="mi">69</span><span class="p">,</span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="s2">&quot;0001-01-01T00:00:00Z&quot;</span><span class="p">,</span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}}</span>
+</code></pre></div>
+<code>name</code>: is the cashout provder name</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+</div>
+<p>This is the request we send in our noebs webhooks.</p>
+<p>Details is the interesting part</p>
+<table>
+<thead>
+<tr>
+<th>field</th>
+<th>type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>response</td>
+<td>string</td>
+</tr>
+<tr>
+<td>code</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>time</td>
+<td>time</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>integer</td>
+</tr>
+</tbody>
+</table>
+<p>These tells the status of each transactions.</p>
 <h3 id="last-step">Last step<a class="headerlink" href="#last-step" title="Permanent link">¶</a></h3>
 <p>The cashout provider will use the newly generated uuid to build the cashout page for their customers.</p>
 <p>In the background, noebs will return the result of the transaction to the <code>endpoint</code> provided by the cashout provider.</p>
