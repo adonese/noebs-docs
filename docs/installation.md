@@ -5,7 +5,11 @@ Noebs can be self hosted too as well as our usual managed solution.
 
 ### Recommended requiremnts
 
+Noebs and its supporting infra runs the best in *NIX platforms. While other platforms can be used, there are hard requirements for Redis. Noebs relies on redis (in-memory database) to provide extreme performance under heavy workloads. This turns out to be very beneficial and helped us a lot in our design.
 
+#### EBS and CBOS integations
+
+For clients how insists on self hosting noebs, EBS integation process is a must. We provide a standard VM that was tested and already in production to help our clients with EBS integrations. 
 
 #### Infra
 

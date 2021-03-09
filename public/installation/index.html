@@ -404,6 +404,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#ebs-and-cbos-integations" class="md-nav__link">
+    EBS and CBOS integations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#infra" class="md-nav__link">
     Infra
   </a>
@@ -482,6 +489,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#ebs-and-cbos-integations" class="md-nav__link">
+    EBS and CBOS integations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#infra" class="md-nav__link">
     Infra
   </a>
@@ -540,6 +554,9 @@
                 <h1 id="noebs-installation">Noebs installation<a class="headerlink" href="#noebs-installation" title="Permanent link">¶</a></h1>
 <p>Noebs can be self hosted too as well as our usual managed solution. </p>
 <h3 id="recommended-requiremnts">Recommended requiremnts<a class="headerlink" href="#recommended-requiremnts" title="Permanent link">¶</a></h3>
+<p>Noebs and its supporting infra runs the best in *NIX platforms. While other platforms can be used, there are hard requirements for Redis. Noebs relies on redis (in-memory database) to provide extreme performance under heavy workloads. This turns out to be very beneficial and helped us a lot in our design.</p>
+<h4 id="ebs-and-cbos-integations">EBS and CBOS integations<a class="headerlink" href="#ebs-and-cbos-integations" title="Permanent link">¶</a></h4>
+<p>For clients how insists on self hosting noebs, EBS integation process is a must. We provide a standard VM that was tested and already in production to help our clients with EBS integrations. </p>
 <h4 id="infra">Infra<a class="headerlink" href="#infra" title="Permanent link">¶</a></h4>
 <p>Below is the set of recommended set up to get noebs up and running. While noebs <em>can</em> run on Windows servers, at least Redis must be run in a Linux instance. Databases are configurable and are up to the org to chose which DB they like. The current base installation of noebs comes with SQLite and relies heavily on Redis for user facing apis.</p>
 <table>
