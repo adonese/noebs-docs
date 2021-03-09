@@ -41,3 +41,4 @@ nav:
     - Go SDK: go.sdk
   - POS / Kiosks: pos.md
   - Cashouts and rewards points: cashout.md
+  - Self hosting noebs: installation.md
